@@ -11,5 +11,6 @@
             Registrace
         </TextBlock>
         <Button Content="Zpět" HorizontalAlignment="Left" Height="47" Margin="41,35,0,0" VerticalAlignment="Top" Width="65" Click="Button_Click"/>
+        <Button Content="Vytvoř nový účet" HorizontalAlignment="Left" Margin="274,333,0,0" VerticalAlignment="Top" Width="166"/>
     </Grid>
 </UserControl>
