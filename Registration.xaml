@@ -7,10 +7,23 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock FontSize="20" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
-            Registrace
-        </TextBlock>
+        <TextBlock FontSize="20" Margin="199,134,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Jméno"/></TextBlock>
         <Button Content="Zpět" HorizontalAlignment="Left" Height="47" Margin="41,35,0,0" VerticalAlignment="Top" Width="65" Click="Button_Click"/>
-        <Button Content="Vytvoř nový účet" HorizontalAlignment="Left" Margin="274,333,0,0" VerticalAlignment="Top" Width="166"/>
+        <Button Content="Vytvoř nový účet" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click_1"/>
+        <TextBlock FontSize="20" Margin="199,166,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Přijmení"/></TextBlock>
+        <TextBlock FontSize="20" Margin="199,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="e-mail"/></TextBlock>
+        <TextBox Name="name_box" HorizontalAlignment="Center" Height="27" Margin="0,134,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="166" />
+        <TextBox Name="surname_box" HorizontalAlignment="Center" Height="27" Margin="0,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+        <TextBox Name="email_box" HorizontalAlignment="Center" Height="27" Margin="0,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+        <TextBlock FontSize="20" Margin="202,230,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Heslo"/></TextBlock>
+        <PasswordBox Name="password_box" HorizontalAlignment="Center" Height="27" Margin="0,230,0,0" VerticalAlignment="Top" Width="166"/>
+        <PasswordBox Name="password_box_verify" HorizontalAlignment="Center" Height="27" Margin="0,262,0,0" VerticalAlignment="Top" Width="166"/>
+        <TextBlock FontSize="20" Margin="202,262,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Text="Heslo"/><Run Language="cs-cz" Text=" znovu"/></TextBlock>
+        <TextBlock  Visibility="Hidden" Name="name_info" FontSize="20" Margin="512,134,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Pole nemůže zůstat prázdné"/></TextBlock>
+        <TextBlock  Visibility="Hidden" Name="surname_info" FontSize="20" Margin="512,166,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Pole nemůže zůstat prázdné"/></TextBlock>
+        <TextBlock  Visibility="Hidden" Name="mail_info" FontSize="20" Margin="512,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Pole nemůže zůstat prázdné"/></TextBlock>
+        <TextBlock  Visibility="Hidden" Name="password_info" FontSize="20" Margin="512,230,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Pole nemůže zůstat prázdné"/></TextBlock>
+        <TextBlock  Visibility="Hidden" Name="password_verify_info" FontSize="20" Margin="512,262,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Language="cs-cz" Text="Pole nemůže zůstat prázdné"/></TextBlock>
+
     </Grid>
 </UserControl>

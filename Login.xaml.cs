@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -33,10 +36,50 @@ namespace ProjectCSharp_SchoolGradingSystem
         {
             result_username.Visibility = Visibility.Collapsed;
             result_password.Visibility = Visibility.Collapsed;
-            if (Username.Text == "login")
+            SqlConnection sn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SchoolSystem1;Integrated Security=True");
+
+
+            int sst = 0;
+            string temp = "";
+                try
+                {
+
+                    string querry = "SELECT student_id FROM [dbo].[student] where student_id=@student_id"; // set  
+                    SqlCommand cmd = new SqlCommand(querry, sn);
+                    cmd.Parameters.AddWithValue("@student_id", Username.Text);
+                    cmd.CommandType = CommandType.Text;
+
+
+                    
+                    sn.Open();
+
+
+                    int i = cmd.ExecuteNonQuery();
+                    sst = i;
+                    sn.Close();
+
+                    string passwordquery = "SELECT password FROM [dbo].[student] where student_id=@student_id"; // set  
+                    SqlCommand cmdpass = new SqlCommand(passwordquery, sn);
+                    cmdpass.Parameters.AddWithValue("@student_id", Username.Text);
+                    cmdpass.CommandType = CommandType.Text;
+                    sn.Open();
+
+
+                    string n = cmdpass.ExecuteScalar().ToString();
+                    temp=n;
+                    sn.Close();
+                }
+                catch
+                {
+                    sst = 4;
+                }
+                
+            
+            
+            if (sst == -1)
             {
                 
-                if (Password.Password == "login")
+                if (Password.Password == temp)
                 {
                    
                     MainWindowView x = new MainWindowView(1);
