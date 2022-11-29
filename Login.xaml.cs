@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
+
 namespace ProjectCSharp_SchoolGradingSystem
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace ProjectCSharp_SchoolGradingSystem
         {
             result_username.Visibility = Visibility.Collapsed;
             result_password.Visibility = Visibility.Collapsed;
+            
             SqlConnection sn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SchoolSystem1;Integrated Security=True");
 
 
@@ -44,12 +46,13 @@ namespace ProjectCSharp_SchoolGradingSystem
                 try
                 {
 
+
                     string querry = "SELECT student_id FROM [dbo].[student] where student_id=@student_id"; // set  
                     SqlCommand cmd = new SqlCommand(querry, sn);
                     cmd.Parameters.AddWithValue("@student_id", Username.Text);
                     cmd.CommandType = CommandType.Text;
 
-
+                    //Entity framework a linq
                     
                     sn.Open();
 
@@ -57,7 +60,8 @@ namespace ProjectCSharp_SchoolGradingSystem
                     int i = cmd.ExecuteNonQuery();
                     sst = i;
                     sn.Close();
-
+                
+                    
                     string passwordquery = "SELECT password FROM [dbo].[student] where student_id=@student_id"; // set  
                     SqlCommand cmdpass = new SqlCommand(passwordquery, sn);
                     cmdpass.Parameters.AddWithValue("@student_id", Username.Text);
@@ -65,8 +69,8 @@ namespace ProjectCSharp_SchoolGradingSystem
                     sn.Open();
 
 
-                    string n = cmdpass.ExecuteScalar().ToString();
-                    temp=n;
+                    temp = cmdpass.ExecuteScalar().ToString();
+                    
                     sn.Close();
                 }
                 catch

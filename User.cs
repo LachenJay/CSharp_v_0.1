@@ -10,7 +10,7 @@ using System.Threading.Tasks.Dataflow;
 using System.Xml.Linq;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
-namespace ProjectCSharp_SchoolGradingSystem
+namespace System.Linq
 {
     internal class User
     {
@@ -35,6 +35,7 @@ namespace ProjectCSharp_SchoolGradingSystem
 
             using (SqlConnection sn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SchoolSystem1;Integrated Security=True"))
             {
+                
                 
                 string lastid = "SELECT TOP(1) student_id FROM [dbo].[student] ORDER BY 1 DESC"; // set  
                 SqlCommand lastidcmd = new SqlCommand(lastid, sn);

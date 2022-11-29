@@ -13,5 +13,9 @@ namespace ProjectCSharp_SchoolGradingSystem
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Console.WriteLine("1");
+        }
     }
 }

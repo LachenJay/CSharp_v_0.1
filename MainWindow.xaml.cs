@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace ProjectCSharp_SchoolGradingSystem
 {
     /// <summary>
@@ -26,7 +27,9 @@ namespace ProjectCSharp_SchoolGradingSystem
         {
 
             this.Title = "Login";
+            Console.WriteLine("2");
             InitializeComponent();
+            
 
 
         }
