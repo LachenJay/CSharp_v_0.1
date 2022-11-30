@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 using System.Threading.Tasks.Dataflow;
 using System.Xml.Linq;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -28,56 +30,37 @@ namespace ProjectCSharp_SchoolGradingSystem
         }
         
         
-        public string push()
+        public string pushstudent()
         {
 
             //this class pushes student user to database
-
-            using (SqlConnection sn = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SchoolSystem1;Integrated Security=True"))
+            using (var db = new SchoolSystem1Context())
             {
+                var count = db.Student.Count();
+                Student newstudent = new Student();
+                string temp;
+                temp= "st" + (count + 1);
+                newstudent.Name = this.name;
+                newstudent.Surname = this.surname;
+                newstudent.EMail = this.e_mail;
+                newstudent.Password = this.password;
+                newstudent.StudentId = temp;
+                newstudent.ClassClassId = "class_A";
+                db.Student.Add(newstudent);
                 
-                string lastid = "SELECT TOP(1) student_id FROM [dbo].[student] ORDER BY 1 DESC"; // set  
-                SqlCommand lastidcmd = new SqlCommand(lastid, sn);
-                lastidcmd.CommandType = CommandType.Text;
-                lastidcmd.Connection.Open();
-                SqlDataReader reader = lastidcmd.ExecuteReader();
-                reader.Read();
-
-                string data = reader["student_id"].ToString();
-
-                char[] lastidchar = data.ToCharArray();
-                data = "";
-
-                for (int ix = 2; ix < lastidchar.Length; ix++)
-                {
-                    data += lastidchar[ix];
-                }
-                int id = Convert.ToInt32(data);
-                id = id + 1;
-                data = "st" + id;
-
-                lastidcmd.Connection.Close();
-
-
-
-
-                string querry = "INSERT INTO [dbo].[student] ([student_id], [name], [surname], [e_mail], [password], [class_class_id]) VALUES (@student_id, @name, @surname, @e_mail, @password, 'class_A')"; // set  
-                SqlCommand cmd = new SqlCommand(querry, sn);
-                cmd.CommandType = CommandType.Text;
-
-                cmd.Parameters.AddWithValue("@student_id", data);
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@surname", surname);
-                cmd.Parameters.AddWithValue("@e_mail", e_mail);
-                cmd.Parameters.AddWithValue("@password", password);
-                
-                sn.Open();
-
-
-                int i = cmd.ExecuteNonQuery();
-                sn.Close();
-                return data;
+                db.SaveChanges(true);
+                return temp;
             }
+
+            
+
+
+
+
+
+        }
+        public void Login(string userName, string password)
+        {
             
         }
     }

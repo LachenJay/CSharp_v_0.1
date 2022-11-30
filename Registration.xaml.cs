@@ -100,7 +100,7 @@ namespace ProjectCSharp_SchoolGradingSystem
 
                 try
                 {
-                    temp=addnew.push();
+                    temp=addnew.pushstudent();
                     MessageBox.Show("Vaše přihlašovací jméno je: " + temp);
                     MainWindowView x = new MainWindowView(0);
                     Application.Current.MainWindow.DataContext = x;
