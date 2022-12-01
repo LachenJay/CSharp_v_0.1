@@ -1,14 +1,12 @@
-﻿<UserControl x:Class="ProjectCSharp_SchoolGradingSystem.Login"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ProjectCSharp_SchoolGradingSystem"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-
-
-
+﻿<UserControl x:Class="ProjectCSharp_SchoolGradingSystem.Adminlg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectCSharp_SchoolGradingSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      >
 
     <Grid Margin="0,0,10,10">
         <TextBox Name="Username" HorizontalAlignment="Center" Height="25" Margin="0,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" Padding="3"/>
@@ -18,7 +16,6 @@
         <Button Content="Login" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="200" Height="26" Click="Button_Click"/>
         <TextBlock x:Name="result_username" HorizontalAlignment="Left" Height="25" Margin="490,152,0,0" TextWrapping="Wrap" Width="286" TextAlignment="Left" Padding="3" VerticalAlignment="Top" Text="Result" Visibility="Collapsed"/>
         <TextBlock x:Name="result_password" HorizontalAlignment="Left" Height="25" Margin="490,0,0,0" TextWrapping="Wrap" Width="286" TextAlignment="Left" Padding="3" VerticalAlignment="Center" Text="Result" Visibility="Collapsed"/>
-        <Button Content="Registrovat nového studenta" HorizontalAlignment="Center" Height="28" Margin="0,324,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_1"/>
 
 
 

@@ -9,7 +9,7 @@ public partial class Grade
 
     public string StudentStudentId { get; set; } = null!;
 
-    public string ClassClassId { get; set; } = null!;
+    public string SubjectId { get; set; } = null!;
 
     public string TeacherTeacherId { get; set; } = null!;
 

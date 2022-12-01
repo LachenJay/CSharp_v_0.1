@@ -82,13 +82,18 @@ public partial class SchoolSystem1Context : DbContext
             entity.ToTable("grades");
 
             entity.Property(e => e.GradeId)
-                .ValueGeneratedNever()
+                .HasMaxLength(30)
+                .IsUnicode(false)
                 .HasColumnName("grade_id");
-            entity.Property(e => e.ClassClassId)
+            entity.Property(e => e.Grade1)
+                .HasMaxLength(30)
+                .IsUnicode(false)
+                .HasColumnName("grade");
+            entity.Property(e => e.SubjectId)
                 .HasMaxLength(15)
                 .IsUnicode(false)
-                .HasColumnName("class_class_id");
-            entity.Property(e => e.Grade1).HasColumnName("grade");
+                .HasColumnName("subject_id");
+           
             entity.Property(e => e.StudentStudentId)
                 .HasMaxLength(30)
                 .IsUnicode(false)
@@ -99,9 +104,9 @@ public partial class SchoolSystem1Context : DbContext
                 .HasColumnName("teacher_teacher_id");
 
             entity.HasOne(d => d.ClassClass).WithMany(p => p.Grades)
-                .HasForeignKey(d => d.ClassClassId)
+                .HasForeignKey(d => d.SubjectId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("grades_class_fk");
+                .HasConstraintName("subject_fk");
 
             entity.HasOne(d => d.StudentStudent).WithMany(p => p.Grades)
                 .HasForeignKey(d => d.StudentStudentId)

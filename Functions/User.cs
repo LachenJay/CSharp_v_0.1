@@ -48,6 +48,8 @@ namespace ProjectCSharp_SchoolGradingSystem
                 newstudent.ClassClassId = "class_A";
                 db.Student.Add(newstudent);
                 
+                
+                
                 db.SaveChanges(true);
                 return temp;
             }
@@ -59,9 +61,34 @@ namespace ProjectCSharp_SchoolGradingSystem
 
 
         }
-        public void Login(string userName, string password)
+        public string pushteacher()
         {
-            
+
+            //this class pushes student user to database
+            using (var db = new SchoolSystem1Context())
+            {
+                var count = db.Teachers.Count();
+                Teacher newteacher = new Teacher();
+                string temp;
+                temp = "tch" + (count + 1);
+                newteacher.Name = this.name;
+                newteacher.Surname = this.surname;
+                newteacher.EMail = this.e_mail;
+                newteacher.Password = this.password;
+                newteacher.TeacherId = temp;
+                
+                db.Teachers.Add(newteacher);
+
+                db.SaveChanges(true);
+                return temp;
+            }
+
+
+
+
+
+
+
         }
     }
 }
