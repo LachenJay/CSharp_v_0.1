@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="ProjectCSharp_SchoolGradingSystem.UpdateGrade"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectCSharp_SchoolGradingSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      >
+
+    <Grid>
+        <ListBox Name="studentlistbox" HorizontalAlignment="Left" Height="146" Margin="466,47,0,0" VerticalAlignment="Top" Width="133" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Studentlistbox_SelectionChanged"/>
+        <ListBox Name="subjectlistbox" HorizontalAlignment="Left" Height="146" Margin="632,47,0,0" VerticalAlignment="Top" Width="133" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Subjectlistbox_SelectionChanged"/>
+        <ListBox Name="gradelistbox" HorizontalAlignment="Left" Height="146" Margin="400,218,0,0" VerticalAlignment="Top" Width="376" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <CheckBox Name="removecheckbox" Content="Odstranit" HorizontalAlignment="Left" Height="22" Margin="54,172,0,0" VerticalAlignment="Top" Width="86" Checked="removecheckbox_Checked" Unchecked="removecheckbox_Unchecked"/>
+        <RadioButton Name="one" GroupName="gradingradio" Content="1" HorizontalAlignment="Left" Margin="61,221,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton Name="two" GroupName="gradingradio" Content="2" HorizontalAlignment="Left" Margin="109,221,0,0" VerticalAlignment="Top" />
+        <RadioButton Name="three" GroupName="gradingradio" Content="3" HorizontalAlignment="Left" Margin="160,221,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="four" GroupName="gradingradio" Content="4" HorizontalAlignment="Left" Margin="210,221,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="five" GroupName="gradingradio" Content="5" HorizontalAlignment="Left" Margin="263,221,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="54,194,0,0" TextWrapping="Wrap" Text="Vyberte známku" VerticalAlignment="Top" Width="124"/>
+        <Button Content="Uložit" HorizontalAlignment="Left" Height="53" Margin="263,370,0,0" VerticalAlignment="Top" Width="217" Click="Button_Click"/>
+        <TextBox Name="descr" HorizontalAlignment="Left" Height="101" Margin="54,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="262"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="54,241,0,0" TextWrapping="Wrap" Text="Nový popis ke známce" VerticalAlignment="Top" Width="124"/>
+        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2"/>
+    </Grid>
+</UserControl>

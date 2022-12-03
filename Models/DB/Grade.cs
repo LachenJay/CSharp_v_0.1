@@ -5,7 +5,7 @@ namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 public partial class Grade
 {
-    public int Grade1 { get; set; }
+    public string Grade1 { get; set; }
 
     public string StudentStudentId { get; set; } = null!;
 
@@ -13,7 +13,9 @@ public partial class Grade
 
     public string TeacherTeacherId { get; set; } = null!;
 
-    public int GradeId { get; set; }
+    public string Grade_description { get; set; } = null!;
+
+    public string GradeId { get; set; } = null!;
 
     public virtual Class ClassClass { get; set; } = null!;
 

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ProjectCSharp_SchoolGradingSystem.Functions;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -27,13 +17,17 @@ namespace ProjectCSharp_SchoolGradingSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowView x = new MainWindowView(10);
-            Application.Current.MainWindow.DataContext = x;
+            Push.ChangeScene("AddGrade", Application.Current.MainWindow.Title);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Push.ChangeScene("UpdateGrade", Application.Current.MainWindow.Title);
+        }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Push.ChangeScene("TeacherLogin", "Přihlášení učitel");
         }
     }
 }

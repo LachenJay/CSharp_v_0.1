@@ -14,8 +14,17 @@
         <TextBlock HorizontalAlignment="Left" Height="25" Margin="211,152,0,0" TextWrapping="Wrap" Width="60" TextAlignment="Center" Padding="3" VerticalAlignment="Top"><Run Text="Usernam"/><Run Language="cs-cz" Text="e"/><Run Text="e"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="25" Margin="211,0,0,0" TextWrapping="Wrap"  Width="63" TextAlignment="Center" VerticalAlignment="Center" Padding="3"><Run Language="cs-cz" Text="Password"/></TextBlock>
         <Button Content="Login" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="200" Height="26" Click="Button_Click"/>
-        <TextBlock x:Name="result_username" HorizontalAlignment="Left" Height="25" Margin="490,152,0,0" TextWrapping="Wrap" Width="286" TextAlignment="Left" Padding="3" VerticalAlignment="Top" Text="Result" Visibility="Collapsed"/>
-        <TextBlock x:Name="result_password" HorizontalAlignment="Left" Height="25" Margin="490,0,0,0" TextWrapping="Wrap" Width="286" TextAlignment="Left" Padding="3" VerticalAlignment="Center" Text="Result" Visibility="Collapsed"/>
+        <TextBlock x:Name="result_username" HorizontalAlignment="Center" Height="25" Margin="0,68,0,0" TextWrapping="Wrap" Width="294" TextAlignment="Left" Padding="3" VerticalAlignment="Top" Text="Uživatelské jméno nebo heslo nebylo zadáno správně!" Cursor="" Foreground="Red" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.085"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_1"/>
 
 
 

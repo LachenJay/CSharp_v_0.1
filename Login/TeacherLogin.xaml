@@ -17,7 +17,7 @@
             <Button Content="Login" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="200" Height="26" Click="Button_Click"/>
             <TextBlock x:Name="result_username" HorizontalAlignment="Left" Height="25" Margin="490,152,0,0" TextWrapping="Wrap" Width="286" TextAlignment="Left" Padding="3" VerticalAlignment="Top" Text="Result" Visibility="Collapsed"/>
             <TextBlock x:Name="result_password" HorizontalAlignment="Left" Height="25" Margin="490,0,0,0" TextWrapping="Wrap" Width="286" TextAlignment="Left" Padding="3" VerticalAlignment="Center" Text="Result" Visibility="Collapsed"/>
-
+        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2"/>
 
 
     </Grid>

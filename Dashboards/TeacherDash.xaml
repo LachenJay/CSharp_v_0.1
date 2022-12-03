@@ -9,8 +9,9 @@
       >
 
     <Grid>
-        <Button Content="Přidat známku" HorizontalAlignment="Left" Height="86" Margin="74,67,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
-        <Button Content="Odebrat známku" HorizontalAlignment="Left" Height="86" Margin="255,67,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click_1"/>
+        <Button Content="Přidat známku" HorizontalAlignment="Left" Height="86" Margin="75,139,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
+        <Button Content="Upravit známku" HorizontalAlignment="Left" Height="86" Margin="263,139,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click_1"/>
+        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2"/>
 
     </Grid>
 </UserControl>

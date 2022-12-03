@@ -30,8 +30,8 @@ public partial class SchoolSystem1Context : DbContext
     public virtual DbSet<Timetable> Timetables { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SchoolSystem1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=E:\\GIT\\CSHARP_V_0.1\\SCHOOLSYSTEM1\\SCHOOLSYSTEM1.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -93,7 +93,10 @@ public partial class SchoolSystem1Context : DbContext
                 .HasMaxLength(15)
                 .IsUnicode(false)
                 .HasColumnName("subject_id");
-           
+            entity.Property(e => e.Grade_description)
+                 .HasMaxLength(50)
+                 .IsUnicode(false)
+                 .HasColumnName("grade_description");
             entity.Property(e => e.StudentStudentId)
                 .HasMaxLength(30)
                 .IsUnicode(false)

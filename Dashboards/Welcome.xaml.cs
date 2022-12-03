@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjectCSharp_SchoolGradingSystem.Functions;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -20,27 +10,26 @@ namespace ProjectCSharp_SchoolGradingSystem
     /// </summary>
     public partial class Welcome : UserControl
     {
+        
         public Welcome()
         {
+            Application.Current.MainWindow.Title = "Výběr typu účtu";
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindowView x = new MainWindowView(1);
-            Application.Current.MainWindow.DataContext = x;
+            Push.ChangeScene("StudentLogin", "Přihlášení žáka");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindowView x = new MainWindowView(4);
-            Application.Current.MainWindow.DataContext = x;
+            Push.ChangeScene("TeacherLogin", "Přihlášení učitele");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            MainWindowView x = new MainWindowView(5);
-            Application.Current.MainWindow.DataContext = x;
+            Push.ChangeScene("Adminlg", "Přihlášení admin");
         }
     }
 }

@@ -46,8 +46,9 @@
         <DataTemplate x:Key="View10Template" DataType="{x:Type local:MainWindowView}">
             <local:AddGrade />
         </DataTemplate>
+        
         <DataTemplate x:Key="View11Template" DataType="{x:Type local:MainWindowView}">
-            <local:TeacherDash />
+            <local:UpdateGrade />
         </DataTemplate>
     </Window.Resources>
 
@@ -94,6 +95,7 @@
                         <DataTrigger Binding="{Binding SwitchView}" Value="11">
                             <Setter Property="ContentTemplate" Value="{StaticResource View11Template}" />
                         </DataTrigger>
+                        
                         
                     </Style.Triggers>
                 </Style>
