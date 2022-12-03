@@ -6,15 +6,13 @@
         xmlns:local="clr-namespace:ProjectCSharp_SchoolGradingSystem"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800"
-        ResizeMode="NoResize"
-        
-        >
-    <Window.DataContext >
-        <local:MainWindowView/>
+        ResizeMode="NoResize">
+    <Window.DataContext>
+        <local:MainWindowView />
     </Window.DataContext>
 
     <Window.Resources>
-        
+
         <DataTemplate x:Key="View1Template" DataType="{x:Type local:MainWindowView}">
             <local:StudentLogin />
         </DataTemplate>
@@ -46,22 +44,21 @@
         <DataTemplate x:Key="View10Template" DataType="{x:Type local:MainWindowView}">
             <local:AddGrade />
         </DataTemplate>
-        
+
         <DataTemplate x:Key="View11Template" DataType="{x:Type local:MainWindowView}">
             <local:UpdateGrade />
         </DataTemplate>
     </Window.Resources>
 
 
-
     <Grid>
 
         <ContentControl>
-            <ContentControl.Style >
+            <ContentControl.Style>
                 <Style TargetType="{x:Type ContentControl}">
                     <Setter Property="ContentTemplate" Value="{StaticResource View6Template}" />
                     <Style.Triggers>
-                        
+
                         <DataTrigger Binding="{Binding SwitchView}" Value="1">
                             <Setter Property="ContentTemplate" Value="{StaticResource View1Template}" />
                         </DataTrigger>
@@ -95,8 +92,8 @@
                         <DataTrigger Binding="{Binding SwitchView}" Value="11">
                             <Setter Property="ContentTemplate" Value="{StaticResource View11Template}" />
                         </DataTrigger>
-                        
-                        
+
+
                     </Style.Triggers>
                 </Style>
             </ContentControl.Style>

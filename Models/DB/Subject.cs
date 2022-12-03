@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
-namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
-
-public partial class Subject
+public class Subject
 {
     public string SubjectId { get; set; } = null!;
 

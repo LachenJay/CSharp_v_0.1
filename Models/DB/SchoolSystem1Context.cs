@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
@@ -30,8 +28,10 @@ public partial class SchoolSystem1Context : DbContext
     public virtual DbSet<Timetable> Timetables { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-
-        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=E:\\GIT\\CSHARP_V_0.1\\SCHOOLSYSTEM1\\SCHOOLSYSTEM1.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    {
+        optionsBuilder.UseSqlServer(
+            "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=E:\\GIT\\CSHARP_V_0.1\\SCHOOLSYSTEM1\\SCHOOLSYSTEM1.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -94,9 +94,9 @@ public partial class SchoolSystem1Context : DbContext
                 .IsUnicode(false)
                 .HasColumnName("subject_id");
             entity.Property(e => e.Grade_description)
-                 .HasMaxLength(50)
-                 .IsUnicode(false)
-                 .HasColumnName("grade_description");
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("grade_description");
             entity.Property(e => e.StudentStudentId)
                 .HasMaxLength(30)
                 .IsUnicode(false)

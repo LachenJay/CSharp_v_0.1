@@ -1,14 +1,17 @@
 ﻿<UserControl x:Class="ProjectCSharp_SchoolGradingSystem.Dashboard"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ProjectCSharp_SchoolGradingSystem"
-             mc:Ignorable="d" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button Content="Zpět" HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
-        <ListBox Name="listofsubjects" HorizontalAlignment="Left" Height="202" Margin="50,98,0,0" VerticalAlignment="Top" Width="155" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_SelectionChanged"/>
-        <ListBox Name="listofgrades" HorizontalAlignment="Left" Height="202" Margin="238,98,0,0" VerticalAlignment="Top" Width="522" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button Content="Zpět" HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top"
+                Width="80" Click="Button_Click" />
+        <ListBox Name="listofsubjects" HorizontalAlignment="Left" Height="202" Margin="50,98,0,0"
+                 VerticalAlignment="Top" Width="155" d:ItemsSource="{d:SampleData ItemCount=5}"
+                 SelectionChanged="ListBox_SelectionChanged" />
+        <ListBox Name="listofgrades" HorizontalAlignment="Left" Height="202" Margin="238,98,0,0"
+                 VerticalAlignment="Top" Width="522" d:ItemsSource="{d:SampleData ItemCount=5}" />
     </Grid>
 </UserControl>

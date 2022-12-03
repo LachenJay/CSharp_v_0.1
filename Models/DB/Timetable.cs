@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
-namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
-
-public partial class Timetable
+public class Timetable
 {
     public string TimetableId { get; set; } = null!;
 

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
-public partial class Student
+public class Student
 {
     public string StudentId { get; set; } = null!;
 

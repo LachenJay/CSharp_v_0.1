@@ -1,42 +1,36 @@
-﻿using System;
-
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-
 using ProjectCSharp_SchoolGradingSystem.Functions;
 
-namespace ProjectCSharp_SchoolGradingSystem
+namespace ProjectCSharp_SchoolGradingSystem;
+
+/// <summary>
+///     Interaction logic for Login.xaml
+/// </summary>
+public partial class StudentLogin : UserControl
 {
-    /// <summary>
-    /// Interaction logic for Login.xaml
-    /// </summary>
-    public partial class StudentLogin : UserControl
+    private Pull pull = new();
+    private Push push = new();
+
+    public StudentLogin()
     {
-        private Pull pull = new Pull();
-        private Push push= new Push();
-        public StudentLogin()
-        {
+        InitializeComponent();
+    }
 
-            InitializeComponent();
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        result_username.Visibility = Visibility.Collapsed;
 
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            result_username.Visibility = Visibility.Collapsed;
+        Pull.PullStudentLog(Username.Text, result_username, Password);
+    }
 
-            Pull.PullStudentLog(Username.Text, result_username, Password);
+    private void Button_Click_1(object sender, RoutedEventArgs e)
+    {
+        Push.ChangeScene("Registration", "Registrace studenta");
+    }
 
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Push.ChangeScene("Registration", "Registrace studenta");
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Push.ChangeScene("Welcome", "Výběr typu účtu");
-        }
+    private void Button_Click_2(object sender, RoutedEventArgs e)
+    {
+        Push.ChangeScene("Welcome", "Výběr typu účtu");
     }
 }

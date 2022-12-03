@@ -1,77 +1,73 @@
-﻿using ProjectCSharp_SchoolGradingSystem.Functions;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
-using System;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
+namespace ProjectCSharp_SchoolGradingSystem;
 
-namespace ProjectCSharp_SchoolGradingSystem
+/// <summary>
+///     Interakční logika pro AddGrade.xaml
+/// </summary>
+public partial class AddGrade : UserControl
 {
-    /// <summary>
-    /// Interakční logika pro AddGrade.xaml
-    /// </summary>
-    public partial class AddGrade : UserControl
+    private readonly Push acc = new();
+    private readonly List<Student> studentlist = new();
+    private readonly List<Subject> subjectlist = new();
+    private Pull req = new();
+
+    public AddGrade()
     {
-        List<Student> studentlist = new List<Student>();
-        List<Subject> subjectlist = new List<Subject>();
-        Pull req = new Pull();
-        Push acc = new Push();
+        InitializeComponent();
 
-        public AddGrade()
+        studentlist = Pull.pullStudents();
+        var i = 0;
+        foreach (var student in studentlist)
         {
-            
-            InitializeComponent();
-            
-                studentlist = Pull.pullStudents();
-                int i = 0;
-                foreach (Student student in studentlist)
-                {
-                    listofstudents.Items.Add(studentlist[i].Name + " " + studentlist[i].Surname + " " + studentlist[i].StudentId);
-                    i++;
-                }
-
-
-                subjectlist = Pull.pullSubjects();
-                int j = 0;
-                foreach (Subject subject in subjectlist)
-                {
-                    listofsubjects.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
-                    j++;
-                }
-
-
-            
+            listofstudents.Items.Add(
+                studentlist[i].Name + " " + studentlist[i].Surname + " " + studentlist[i].StudentId);
+            i++;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        subjectlist = Pull.pullSubjects();
+        var j = 0;
+        foreach (var subject in subjectlist)
         {
-            
-            using (var db = new SchoolSystem1Context())
-            {
-                
-                string student = studentlist[listofstudents.SelectedIndex].StudentId;
-                string subject = subjectlist[listofsubjects.SelectedIndex].SubjectId;
-                string grade_description = descr.Text;
-                string teacher = Application.Current.MainWindow.Title;
-                
+            if (subjectlist[j].TeacherTeacherId == Application.Current.MainWindow.Title)
+                listofsubjects.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
 
-                
-                int grade = 0;
-                if (one.IsChecked == true) { grade = 1; }
-                else if (two.IsChecked == true) { grade = 2; } 
-                else if(three.IsChecked==true) { grade= 3;}
-                else if(four.IsChecked==true) { grade = 4; }
-                else if(five.IsChecked==true) { grade = 5; }
-
-                acc.AddGradeExt(student, subject, teacher, grade, grade_description);
-            }
+            j++;
         }
+    }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        using (var db = new SchoolSystem1Context())
         {
-            Push.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
+            var student = studentlist[listofstudents.SelectedIndex].StudentId;
+            var subject = subjectlist[listofsubjects.SelectedIndex].SubjectId;
+            var grade_description = descr.Text;
+            var teacher = Application.Current.MainWindow.Title;
+
+
+            var grade = 0;
+            if (one.IsChecked == true)
+                grade = 1;
+            else if (two.IsChecked == true)
+                grade = 2;
+            else if (three.IsChecked == true)
+                grade = 3;
+            else if (four.IsChecked == true)
+                grade = 4;
+            else if (five.IsChecked == true) grade = 5;
+
+            acc.AddGradeExt(student, subject, teacher, grade, grade_description);
         }
+    }
+
+    private void Button_Click_2(object sender, RoutedEventArgs e)
+    {
+        Push.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
     }
 }

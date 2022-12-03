@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
-namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
-
-public partial class Admin
+public class Admin
 {
     public string AdminId { get; set; } = null!;
 

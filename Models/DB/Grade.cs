@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
 
-namespace ProjectCSharp_SchoolGradingSystem.Models.DB;
-
-public partial class Grade
+public class Grade
 {
     public string Grade1 { get; set; }
 
