@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Dashboards\AdminDash.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dashboards\TeacherDash.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dashboards\Welcome.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\AddGrade.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\AddSubject.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\EditAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\EditStudent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\EditSubject.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\EditTeacher.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Functions\UpdateGrade.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login\Adminlg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login\TeacherLogin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Registrations\TeacherRegist.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Dashboards\AdminDash.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dashboards\TeacherDash.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dashboards\Welcome.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\AddGrade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\AddSubject.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\EditAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\EditStudent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\EditSubject.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\EditTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Functions\UpdateGrade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\Adminlg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login\TeacherLogin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Registrations\TeacherRegist.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

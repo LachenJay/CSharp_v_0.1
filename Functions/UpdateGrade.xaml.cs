@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -10,14 +12,15 @@ namespace ProjectCSharp_SchoolGradingSystem;
 /// </summary>
 public partial class UpdateGrade : UserControl
 {
-    private readonly Push push = new();
+    private readonly BackboneWork push = new();
+    private List<Teacher> tech;
 
     public UpdateGrade()
     {
         InitializeComponent();
         var i = 0;
-        var studentlist = Pull.pullStudents();
-        var subjectlist = Pull.pullSubjects();
+        var studentlist = HandOverWork.pullStudents();
+        var subjectlist = HandOverWork.pullSubjects();
         foreach (var student in studentlist)
         {
             studentlistbox.Items.Add(
@@ -25,11 +28,16 @@ public partial class UpdateGrade : UserControl
             i++;
         }
 
+        using (var db = new SchoolSystem1Context())
+        {
+            tech = db.Teachers.Where(s => s.EMail == Application.Current.MainWindow.Title).ToList();
+        }
 
         var j = 0;
         foreach (var subject in subjectlist)
         {
-            if (subjectlist[j].TeacherTeacherId == Application.Current.MainWindow.Title)
+            
+            if (subjectlist[j].TeacherTeacherId == tech[0].TeacherId)
                 subjectlistbox.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
 
             j++;
@@ -54,7 +62,12 @@ public partial class UpdateGrade : UserControl
         rad.Add(three);
         rad.Add(four);
         rad.Add(five);
-        push.EditGrade(studentlistbox, gradelistbox, removecheckbox, descr, rad);
+        if (gradelistbox.SelectedItem != null)
+        {
+            GradeWork.EditGrade(studentlistbox, gradelistbox, subjectlistbox,removecheckbox, descr, rad);
+        }
+
+        
     }
 
     private void removecheckbox_Checked(object sender, RoutedEventArgs e)
@@ -79,6 +92,6 @@ public partial class UpdateGrade : UserControl
 
     private void Button_Click_2(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
+        BackboneWork.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
     }
 }

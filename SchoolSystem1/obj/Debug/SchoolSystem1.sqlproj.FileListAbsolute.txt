@@ -1,0 +1,10 @@
+C:\Users\Hightoast\source\repos\SchoolSystem1\bin\Debug\SchoolSystem1.dacpac
+C:\Users\Hightoast\source\repos\SchoolSystem1\bin\Debug\SchoolSystem1.dll
+C:\Users\Hightoast\source\repos\SchoolSystem1\bin\Debug\SchoolSystem1.pdb
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\SchoolSystem1.sqlproj.AssemblyReference.cache
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\Model.xml
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\refactor.xml
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\postdeploy.sql
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\predeploy.sql
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\SchoolSystem1.dll
+C:\Users\Hightoast\source\repos\SchoolSystem1\obj\Debug\SchoolSystem1.pdb

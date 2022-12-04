@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
 using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem;
@@ -11,16 +12,18 @@ namespace ProjectCSharp_SchoolGradingSystem;
 /// </summary>
 public partial class AddGrade : UserControl
 {
-    private readonly Push acc = new();
+    private readonly BackboneWork acc = new();
     private readonly List<Student> studentlist = new();
     private readonly List<Subject> subjectlist = new();
-    private Pull req = new();
+    private readonly List<Teacher> teacherlist = HandOverWork.pullTeachers();
+    
+    private HandOverWork req = new();
 
     public AddGrade()
     {
         InitializeComponent();
 
-        studentlist = Pull.pullStudents();
+        studentlist = HandOverWork.pullStudents();
         var i = 0;
         foreach (var student in studentlist)
         {
@@ -29,15 +32,19 @@ public partial class AddGrade : UserControl
             i++;
         }
 
-
-        subjectlist = Pull.pullSubjects();
-        var j = 0;
-        foreach (var subject in subjectlist)
+        using (var db = new SchoolSystem1Context())
         {
-            if (subjectlist[j].TeacherTeacherId == Application.Current.MainWindow.Title)
-                listofsubjects.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
+            var tech = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title)[0];
+            subjectlist = HandOverWork.pullSubjects();
+            var j = 0;
+            foreach (var subject in subjectlist)
+            {
+               
+                if (subjectlist[j].TeacherTeacherId == tech.TeacherId)
+                    listofsubjects.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
 
-            j++;
+                j++;
+            }
         }
     }
 
@@ -48,8 +55,7 @@ public partial class AddGrade : UserControl
             var student = studentlist[listofstudents.SelectedIndex].StudentId;
             var subject = subjectlist[listofsubjects.SelectedIndex].SubjectId;
             var grade_description = descr.Text;
-            var teacher = Application.Current.MainWindow.Title;
-
+            var tech = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title)[0];
 
             var grade = 0;
             if (one.IsChecked == true)
@@ -62,12 +68,12 @@ public partial class AddGrade : UserControl
                 grade = 4;
             else if (five.IsChecked == true) grade = 5;
 
-            acc.AddGradeExt(student, subject, teacher, grade, grade_description);
+            GradeWork.AddGradeExt(student, subject, tech.TeacherId, grade, grade_description);
         }
     }
 
     private void Button_Click_2(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
+        BackboneWork.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
     }
 }

@@ -1,0 +1,85 @@
+13/11/2022 13:12:43	This log contains information about the import schema operation into project 'SchoolSystem1' on computer 'DESKTOP-TRR01BQ' by user 'Hightoast'.
+13/11/2022 13:12:44	Import of database schema has started.
+13/11/2022 13:13:01	Gathering database credentials
+13/11/2022 13:13:01	Gathering database options
+13/11/2022 13:13:01	Gathering generic database scoped configuration option
+13/11/2022 13:13:01	Gathering users
+13/11/2022 13:13:01	Gathering roles
+13/11/2022 13:13:01	Gathering application roles
+13/11/2022 13:13:01	Gathering role memberships
+13/11/2022 13:13:01	Gathering filegroups
+13/11/2022 13:13:01	Gathering full-text catalogs
+13/11/2022 13:13:01	Gathering assemblies
+13/11/2022 13:13:01	Gathering certificates
+13/11/2022 13:13:01	Gathering asymmetric keys
+13/11/2022 13:13:01	Gathering symmetric keys
+13/11/2022 13:13:01	Gathering encrypted symmetric keys
+13/11/2022 13:13:01	Gathering schemas
+13/11/2022 13:13:01	Gathering XML schema collections
+13/11/2022 13:13:01	Gathering user-defined data types
+13/11/2022 13:13:01	Gathering user-defined types
+13/11/2022 13:13:01	Gathering table types
+13/11/2022 13:13:01	Gathering unique keys for table types
+13/11/2022 13:13:01	Gathering primary keys for table types
+13/11/2022 13:13:01	Gathering indexes for table types
+13/11/2022 13:13:01	Gathering check constraints for table types
+13/11/2022 13:13:01	Gathering default constraints for table types
+13/11/2022 13:13:01	Gathering partition functions
+13/11/2022 13:13:01	Gathering partition schemes
+13/11/2022 13:13:01	Gathering functions
+13/11/2022 13:13:01	Gathering encrypted functions
+13/11/2022 13:13:01	Gathering aggregates
+13/11/2022 13:13:01	Gathering procedures
+13/11/2022 13:13:01	Gathering encrypted procedures
+13/11/2022 13:13:01	Gathering tables
+13/11/2022 13:13:01	Gathering primary keys
+13/11/2022 13:13:01	Gathering unique constraints
+13/11/2022 13:13:01	Gathering foreign keys
+13/11/2022 13:13:01	Gathering default constraints
+13/11/2022 13:13:01	Gathering check constraints
+13/11/2022 13:13:01	Gathering views
+13/11/2022 13:13:01	Gathering encrypted views
+13/11/2022 13:13:01	Gathering indexes
+13/11/2022 13:13:01	Gathering statistics
+13/11/2022 13:13:01	Gathering full-text index stoplists
+13/11/2022 13:13:01	Gathering search property lists
+13/11/2022 13:13:01	Gathering search properties
+13/11/2022 13:13:01	Gathering full-text indexes
+13/11/2022 13:13:01	Gathering column store indexes
+13/11/2022 13:13:01	Gathering spatial indexes
+13/11/2022 13:13:01	Gathering XML indexes
+13/11/2022 13:13:01	Gathering Selective XML indexes
+13/11/2022 13:13:01	Gathering encrypted triggers
+13/11/2022 13:13:01	Gathering triggers
+13/11/2022 13:13:01	Gathering encrypted and clr ddl triggers
+13/11/2022 13:13:01	Gathering ddl triggers
+13/11/2022 13:13:01	Creating edge constraints
+13/11/2022 13:13:01	Gathering synonyms
+13/11/2022 13:13:01	Gathering defaults
+13/11/2022 13:13:01	Gathering data constraint uddt bindings
+13/11/2022 13:13:01	Gathering rules
+13/11/2022 13:13:01	Gathering data constraint uddt bindings
+13/11/2022 13:13:01	Gathering message types
+13/11/2022 13:13:02	Gathering queues
+13/11/2022 13:13:02	Gathering contracts
+13/11/2022 13:13:02	Gathering services
+13/11/2022 13:13:02	Gathering event notifications
+13/11/2022 13:13:02	Gathering remote service bindings
+13/11/2022 13:13:02	Gathering broker priorities
+13/11/2022 13:13:02	Gathering signatures
+13/11/2022 13:13:02	Gathering data compression options
+13/11/2022 13:13:02	Gathering sequence types
+13/11/2022 13:13:02	Gathering security policies
+13/11/2022 13:13:02	Gather column encryption keys
+13/11/2022 13:13:02	Gathering column master keys
+13/11/2022 13:13:02	Gathering external data sources
+13/11/2022 13:13:02	Gathering external file formats
+13/11/2022 13:13:02	Gathering external tables
+13/11/2022 13:13:02	Gathering extended properties
+13/11/2022 13:13:02	Gathering assemblies
+13/11/2022 13:13:02	Gathering credentials
+13/11/2022 13:13:02	Gathering logins
+13/11/2022 13:13:02	Gathering server audits
+13/11/2022 13:13:06	Finished importing database.
+13/11/2022 13:13:06	A summary of the import was saved to the following location: C:\Users\Hightoast\source\repos\SchoolSystem1\Import Schema Logs\SchoolSystem1_20221113121243.log
+13/11/2022 13:13:06	Click Finish to continue...

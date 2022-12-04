@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -17,16 +17,16 @@ public partial class Welcome : UserControl
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("StudentLogin", "Přihlášení žáka");
+        BackboneWork.ChangeScene("StudentLogin", "Přihlášení žáka");
     }
 
     private void Button_Click_1(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("TeacherLogin", "Přihlášení učitele");
+        BackboneWork.ChangeScene("TeacherLogin", "Přihlášení učitele");
     }
 
     private void Button_Click_2(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("Adminlg", "Přihlášení admin");
+        BackboneWork.ChangeScene("Adminlg", "Přihlášení admin");
     }
 }

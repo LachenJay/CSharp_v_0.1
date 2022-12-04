@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectCSharp_SchoolGradingSystem", "ProjectCSharp_SchoolGradingSystem.csproj", "{E550C9A2-788A-4DD5-B608-61C30262CB40}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SchoolSystem1", "..\..\..\source\repos\SchoolSystem1\SchoolSystem1.sqlproj", "{9B42960F-D710-47B0-BB74-96E4A96EBBFC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +15,6 @@ Global
 		{E550C9A2-788A-4DD5-B608-61C30262CB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E550C9A2-788A-4DD5-B608-61C30262CB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E550C9A2-788A-4DD5-B608-61C30262CB40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B42960F-D710-47B0-BB74-96E4A96EBBFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B42960F-D710-47B0-BB74-96E4A96EBBFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B42960F-D710-47B0-BB74-96E4A96EBBFC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{9B42960F-D710-47B0-BB74-96E4A96EBBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B42960F-D710-47B0-BB74-96E4A96EBBFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B42960F-D710-47B0-BB74-96E4A96EBBFC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

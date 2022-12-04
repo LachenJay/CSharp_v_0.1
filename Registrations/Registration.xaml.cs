@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -17,7 +18,16 @@ public partial class Registration : UserControl
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("StudentLogin", "Přihlášení student");
+        var nav = HandOverWork.PullStudentsByEmail(Application.Current.MainWindow.Title);
+        if (nav.Count != 0)
+        {
+            BackboneWork.ChangeScene("StudentLogin", Application.Current.MainWindow.Title);
+        }
+        else
+        {
+            BackboneWork.ChangeScene("AdminDash", Application.Current.MainWindow.Title);
+        }
+        
     }
 
 
@@ -35,6 +45,6 @@ public partial class Registration : UserControl
         info.Add(password_info);
         info.Add(password_verify_info);
 
-        Push.StudentRegistration(name_box, surname_box, password_box, password_box_verify, email_box, info);
+        RegistrationWork.StudentRegistration(name_box, surname_box, password_box, password_box_verify, email_box, info);
     }
 }

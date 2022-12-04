@@ -48,6 +48,21 @@
         <DataTemplate x:Key="View11Template" DataType="{x:Type local:MainWindowView}">
             <local:UpdateGrade />
         </DataTemplate>
+        <DataTemplate x:Key="View12Template" DataType="{x:Type local:MainWindowView}">
+            <local:AddSubject />
+        </DataTemplate>
+        <DataTemplate x:Key="View13Template" DataType="{x:Type local:MainWindowView}">
+            <local:EditSubject />
+        </DataTemplate>
+        <DataTemplate x:Key="View14Template" DataType="{x:Type local:MainWindowView}">
+            <local:EditStudent />
+        </DataTemplate>
+        <DataTemplate x:Key="View15Template" DataType="{x:Type local:MainWindowView}">
+            <local:EditAdmin />
+        </DataTemplate>
+        <DataTemplate x:Key="View16Template" DataType="{x:Type local:MainWindowView}">
+            <local:EditTeacher />
+        </DataTemplate>
     </Window.Resources>
 
 
@@ -92,7 +107,21 @@
                         <DataTrigger Binding="{Binding SwitchView}" Value="11">
                             <Setter Property="ContentTemplate" Value="{StaticResource View11Template}" />
                         </DataTrigger>
-
+                        <DataTrigger Binding="{Binding SwitchView}" Value="12">
+                            <Setter Property="ContentTemplate" Value="{StaticResource View12Template}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SwitchView}" Value="13">
+                            <Setter Property="ContentTemplate" Value="{StaticResource View13Template}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SwitchView}" Value="14">
+                            <Setter Property="ContentTemplate" Value="{StaticResource View14Template}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SwitchView}" Value="15">
+                            <Setter Property="ContentTemplate" Value="{StaticResource View15Template}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SwitchView}" Value="16">
+                            <Setter Property="ContentTemplate" Value="{StaticResource View16Template}" />
+                        </DataTrigger>
 
                     </Style.Triggers>
                 </Style>

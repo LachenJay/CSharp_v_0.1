@@ -7,8 +7,21 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Button Content="Registruj učitele" HorizontalAlignment="Left" Height="76" Margin="64,60,0,0"
-                VerticalAlignment="Top" Width="138" Click="Button_Click" />
+        <Button Content="Registruj učitele" HorizontalAlignment="Left" Height="91" Margin="98,134,0,0"
+                VerticalAlignment="Top" Width="166" Click="Button_Click" />
+        <Button Content="Přidat předmět" HorizontalAlignment="Left" Height="91" Margin="324,266,0,0"
+            VerticalAlignment="Top" Width="166" Click="Button_Click2" />
+        <Button Content="Upravit předmět" HorizontalAlignment="Left" Height="91" Margin="555,266,0,0"
+            VerticalAlignment="Top" Width="166" Click="Button_Click3" />
+        <Button Content="Registruj žáka" HorizontalAlignment="Left" Height="91" Margin="324,134,0,0"
+            VerticalAlignment="Top" Width="166" Click="Button_Click1" />
+        <Button Content="Uprav žáka" HorizontalAlignment="Left" Height="91" Margin="98,266,0,0"
+            VerticalAlignment="Top" Width="166" Click="Button_student" />
+        <Button Content="Uprav učitele" HorizontalAlignment="Left" Height="91" Margin="555,134,0,0"
+            VerticalAlignment="Top" Width="166" Click="Button_teacher" />
+        <Button Content="Zpět" HorizontalAlignment="Left" Height="91" Margin="10,10,0,0"
+            VerticalAlignment="Top" Width="86" Click="Button_back" />
+        <Button Content="Upravit svůj účet" HorizontalAlignment="Left" Height="34" Margin="653,10,0,0" VerticalAlignment="Top" Width="122" Click="Button_Click_1"/>
 
     </Grid>
 </UserControl>

@@ -9,9 +9,17 @@
     <Grid>
         <Button Content="Přidat známku" HorizontalAlignment="Left" Height="86" Margin="75,139,0,0"
                 VerticalAlignment="Top" Width="163" Click="Button_Click" />
-        <Button Content="Upravit známku" HorizontalAlignment="Left" Height="86" Margin="263,139,0,0"
-                VerticalAlignment="Top" Width="163" Click="Button_Click_1" />
+        <Button Content="Upravit známku" HorizontalAlignment="Center" Height="86" Margin="0,139,0,0"
+                VerticalAlignment="Top" Width="164" Click="Button_Click_1" />
         <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2" />
+        <Button Content="Přidat předmět" HorizontalAlignment="Left" Height="86" Margin="560,139,0,0"
+            VerticalAlignment="Top" Width="163" Click="Button_Click_3" />
+        <Button Content="Upravit předmět" HorizontalAlignment="Left" Height="86" Margin="75,276,0,0"
+            VerticalAlignment="Top" Width="163" Click="Button_Click_4" />
+        <Button Content="Upravit žáka" HorizontalAlignment="Center" Height="86" Margin="0,276,0,0"
+            VerticalAlignment="Top" Width="163" Click="Button_Click_5" />
+        <Button Content="Upravit učitele" HorizontalAlignment="Left" Height="86" Margin="560,276,0,0"
+            VerticalAlignment="Top" Width="163" Click="Button_Click_6" />
 
     </Grid>
 </UserControl>

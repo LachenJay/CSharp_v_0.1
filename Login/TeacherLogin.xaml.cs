@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -9,7 +9,7 @@ namespace ProjectCSharp_SchoolGradingSystem;
 /// </summary>
 public partial class TeacherLogin : UserControl
 {
-    private Pull pull = new();
+    private HandOverWork pull = new();
 
     public TeacherLogin()
     {
@@ -19,12 +19,12 @@ public partial class TeacherLogin : UserControl
     private void Button_Click(object sender, RoutedEventArgs e)
     {
         result_username.Visibility = Visibility.Collapsed;
-        Pull.PullTeacherLog(Username.Text, result_username, Password);
+        LoginWork.PullTeacherLog(Username.Text, result_username, Password);
     }
 
 
     private void Button_Click_2(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("Welcome", "Výběr typu účtu");
+        BackboneWork.ChangeScene("Welcome", "Výběr typu účtu");
     }
 }

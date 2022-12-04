@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -29,7 +29,7 @@ public partial class TeacherRegist : UserControl
         info.Add(mail_info);
         info.Add(password_info);
         info.Add(password_verify_info);
-        Push.TeacherRegistration(name_box, surname_box, password_box, password_box_verify, email_box, info);
+        RegistrationWork.TeacherRegistration(name_box, surname_box, password_box, password_box_verify, email_box, info);
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)

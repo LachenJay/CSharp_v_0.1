@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Functions;
+using ProjectCSharp_SchoolGradingSystem.Backend;
 using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem;
@@ -18,7 +19,7 @@ public partial class Dashboard : UserControl
     public Dashboard()
     {
         InitializeComponent();
-        subjectlist = Pull.pullSubjects();
+        subjectlist = HandOverWork.pullSubjects();
         var j = 0;
         foreach (var subject in subjectlist)
         {
@@ -26,12 +27,12 @@ public partial class Dashboard : UserControl
             j++;
         }
 
-        studentid = Application.Current.MainWindow.Title;
+        studentid = HandOverWork.PullStudentsByEmail(Application.Current.MainWindow.Title).ToList()[0].StudentId;
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        Push.ChangeScene("StudentLogin", "Přihlášení student");
+        BackboneWork.ChangeScene("StudentLogin", "Přihlášení student");
     }
 
     private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -41,7 +42,7 @@ public partial class Dashboard : UserControl
         using (var db = new SchoolSystem1Context())
         {
             var i = 0;
-            var grades = Pull.pullGrades(studentid);
+            var grades = GradeWork.pullGrades(studentid);
 
             var teacher = new Teacher();
             foreach (var grade in grades)
