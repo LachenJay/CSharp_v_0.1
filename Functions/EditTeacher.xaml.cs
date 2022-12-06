@@ -24,10 +24,12 @@ namespace ProjectCSharp_SchoolGradingSystem
     {
         private List<Teacher> teacherlist = HandOverWork.pullTeachers();
         private Teacher teacher = new Teacher();
+        private static string mail;
         public EditTeacher()
         {
             InitializeComponent();
             teacherlist = HandOverWork.pullTeachers();
+            teacher = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title)[0];
             var i = 0;
             foreach (var student in teacherlist)
             {
@@ -36,14 +38,14 @@ namespace ProjectCSharp_SchoolGradingSystem
                 i++;
             }
 
-            List<Teacher> temp = new List<Teacher>();
-            temp = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title);
+            
+            var temp = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title);
 
             if (temp.Count != 0)
             {
                 ListBoxTeachers.IsEnabled = false;
                 ListBoxTeachers.Visibility = Visibility.Collapsed;
-                teacher = temp[0];
+                mail = temp[0].EMail;
                 NameBox.Text = teacher.Name;
                 SurnameBox.Text = teacher.Surname;
                 EmailBox.Text = teacher.EMail;
@@ -67,9 +69,33 @@ namespace ProjectCSharp_SchoolGradingSystem
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
+            var temp = HandOverWork.pullTeacherByMail(mail);
+            
+            if (temp.Count != 0)
+            {
+                mail = EmailBox.Text;
+                temp = HandOverWork.pullTeacherByMail(mail);
+                
+            }
+            else
+            {
+                temp = null;
+            }
             EditUsers.EditTeacher(NameBox, SurnameBox, EmailBox, PasswordBox, PasswordVerifyBox, infoblock, teacher.TeacherId);
+
+            
+            if (temp.Count != 0)
+            {
+                    mail = EmailBox.Text;
+                    
+                        Application.Current.MainWindow.Title = mail;
+                    
+            }
+
             ListBoxTeachers.Items.Clear();
             teacherlist = HandOverWork.pullTeachers();
+
             var i = 0;
             foreach (var student in teacherlist)
             {
@@ -77,6 +103,7 @@ namespace ProjectCSharp_SchoolGradingSystem
                     teacherlist[i].Name + " " + teacherlist[i].Surname + " " + teacherlist[i].TeacherId);
                 i++;
             }
+            
 
             PasswordBox.Password = "";
             PasswordVerifyBox.Password = "";
@@ -88,7 +115,7 @@ namespace ProjectCSharp_SchoolGradingSystem
             var nav = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title);
             if (nav.Count != 0)
             {
-                BackboneWork.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
+                BackboneWork.ChangeScene("TeacherLogin", Application.Current.MainWindow.Title);
             }
             else
             {

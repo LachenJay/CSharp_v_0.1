@@ -220,10 +220,13 @@ public class EditUsers
                 teachergrab.Password = password;
                 db.Teachers.Update(teachergrab);
                 db.SaveChanges(true);
+
                 MessageBox.Show("Učitel upraven!");
+                
+
             }
 
-
+            
 
 
 
@@ -232,6 +235,7 @@ public class EditUsers
         else
         {
             info.Visibility = Visibility.Visible;
+            
         }
     }
 }

@@ -42,10 +42,12 @@ public partial class TeacherDash : UserControl
     private void Button_Click_5(object sender, RoutedEventArgs e)
     {
 
+        BackboneWork.ChangeScene("EditStudent", Application.Current.MainWindow.Title);
     }
 
     private void Button_Click_6(object sender, RoutedEventArgs e)
     {
+        BackboneWork.ChangeScene("EditTeacher", Application.Current.MainWindow.Title);
 
     }
 }
