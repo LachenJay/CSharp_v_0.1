@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
+using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Backend;
 
 
 namespace ProjectCSharp_SchoolGradingSystem;
@@ -10,8 +10,7 @@ namespace ProjectCSharp_SchoolGradingSystem;
 /// </summary>
 public partial class StudentLogin : UserControl
 {
-    private HandOverWork pull = new();
-    private BackboneWork push = new();
+
 
     public StudentLogin()
     {

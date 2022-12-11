@@ -7,12 +7,19 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Button Content="Přihlášení žáka" HorizontalAlignment="Left" Height="92" Margin="80,0,0,0"
-                VerticalAlignment="Center" Width="180" Click="Button_Click" />
-        <Button Content="Přihlášení učitele" HorizontalAlignment="Center" Height="92" VerticalAlignment="Center"
-                Width="180" Click="Button_Click_1" />
-        <Button Content="Přihlášení admina" HorizontalAlignment="Left" Height="92" Margin="546,0,0,0"
-                VerticalAlignment="Center" Width="180" Click="Button_Click_2" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/Welcome.png"/>
+        </Grid.Background>
+        <Button Content="Přihlášení žáka" HorizontalAlignment="Left" Height="120" Margin="96,0,0,0"
+                VerticalAlignment="Center" Width="138" Click="Button_Click" Opacity="0.02" />
+        <Button Content="Přihlášení učitele" HorizontalAlignment="Left" Height="120" VerticalAlignment="Center"
+                Width="134" Click="Button_Click_1" Opacity="0.02" Margin="330,0,0,0" />
+        <Button Content="Přihlášení admina" HorizontalAlignment="Left" Height="120" Margin="567,0,0,0"
+                VerticalAlignment="Center" Width="138" Click="Button_Click_2" Opacity="0.02" />
+        <Button Content="Zpět" HorizontalAlignment="Left" Height="32" Margin="34,35,0,0" VerticalAlignment="Top"
+                Width="37" Click="Button_Click" Opacity="0" />
+        <Button Content="Zpět" HorizontalAlignment="Left" Height="32" Margin="34,35,0,0" VerticalAlignment="Top"
+                Width="37" Click="Button_Click_zpet" Opacity="0" />
 
     </Grid>
 </UserControl>

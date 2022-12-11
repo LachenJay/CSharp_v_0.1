@@ -7,19 +7,22 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Button Content="Přidat známku" HorizontalAlignment="Left" Height="86" Margin="75,139,0,0"
-                VerticalAlignment="Top" Width="163" Click="Button_Click" />
-        <Button Content="Upravit známku" HorizontalAlignment="Center" Height="86" Margin="0,139,0,0"
-                VerticalAlignment="Top" Width="164" Click="Button_Click_1" />
-        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2" />
-        <Button Content="Přidat předmět" HorizontalAlignment="Left" Height="86" Margin="560,139,0,0"
-            VerticalAlignment="Top" Width="163" Click="Button_Click_3" />
-        <Button Content="Upravit předmět" HorizontalAlignment="Left" Height="86" Margin="75,276,0,0"
-            VerticalAlignment="Top" Width="163" Click="Button_Click_4" />
-        <Button Content="Upravit žáka" HorizontalAlignment="Center" Height="86" Margin="0,276,0,0"
-            VerticalAlignment="Top" Width="163" Click="Button_Click_5" />
-        <Button Content="Upravit učitele" HorizontalAlignment="Left" Height="86" Margin="560,276,0,0"
-            VerticalAlignment="Top" Width="163" Click="Button_Click_6" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/TeacherDash.png"/>
+        </Grid.Background>
+        <Button Content="Přidat známku" HorizontalAlignment="Left" Height="107" Margin="97,84,0,0"
+                VerticalAlignment="Top" Width="134" Click="Button_Click" Opacity="0.02" />
+        <Button Content="Upravit známku" HorizontalAlignment="Left" Height="108" Margin="337,83,0,0"
+                VerticalAlignment="Top" Width="134" Click="Button_Click_1" Opacity="0.02" />
+        <Button Content="Zpět" Margin="33,30,712,344" Click="Button_Click_2" Opacity="0.02" />
+        <Button Content="Přidat předmět" HorizontalAlignment="Left" Height="108" Margin="575,83,0,0"
+            VerticalAlignment="Top" Width="136" Click="Button_Click_3" Opacity="0.02" />
+        <Button Content="Upravit předmět" HorizontalAlignment="Left" Height="110" Margin="92,232,0,0"
+            VerticalAlignment="Top" Width="141" Click="Button_Click_4" Opacity="0.02" />
+        <Button Content="Upravit žáka" HorizontalAlignment="Left" Height="110" Margin="333,232,0,0"
+            VerticalAlignment="Top" Width="138" Click="Button_Click_5" Opacity="0.02" />
+        <Button Content="Upravit učitele" HorizontalAlignment="Left" Height="110" Margin="577,232,0,0"
+            VerticalAlignment="Top" Width="138" Click="Button_Click_6" Opacity="0.02" />
 
     </Grid>
 </UserControl>

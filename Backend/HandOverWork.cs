@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ProjectCSharp_SchoolGradingSystem.Models.DB;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem.Backend;
 
@@ -25,12 +24,12 @@ internal class HandOverWork
         {
             List<Student> tech = db.Student.Where(s => s.EMail == Application.Current.MainWindow.Title).ToList();
 
-            
-            
+
+
 
             return tech;
         }
-        
+
 
 
     }
@@ -68,14 +67,14 @@ internal class HandOverWork
 
     public static List<Teacher> pullTeacherByMail(string email)
     {
-        
+
         using (var db = new SchoolSystem1Context())
         {
             var tech = db.Teachers.Where(s => s.EMail == Application.Current.MainWindow.Title).ToList();
             return tech;
         }
 
-        
+
     }
     public static List<Teacher> pullTeachersById(string id)
     {

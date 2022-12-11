@@ -1,19 +1,8 @@
 ﻿using ProjectCSharp_SchoolGradingSystem.Backend;
 using ProjectCSharp_SchoolGradingSystem.Models.DB;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -24,6 +13,7 @@ namespace ProjectCSharp_SchoolGradingSystem
     {
         private List<Teacher> teacherlist = new List<Teacher>();
         private List<Subject> subjectlist = new List<Subject>();
+        private readonly BackboneWork push = new();
         public EditSubject()
         {
             InitializeComponent();
@@ -52,7 +42,8 @@ namespace ProjectCSharp_SchoolGradingSystem
         {
             Warning.Visibility = Visibility.Collapsed;
             SubjectWork.CompleteDeletion(SubjectBox, TeacherBox, NameBox, Deletecheck, Warning);
-            
+            push.ChangeOnListBoxSubject(SubjectBox);
+
         }
 
         private void Deletecheck_Checked(object sender, RoutedEventArgs e)

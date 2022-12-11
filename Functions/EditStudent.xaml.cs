@@ -1,19 +1,8 @@
-﻿using System;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ProjectCSharp_SchoolGradingSystem.Backend;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -48,14 +37,14 @@ namespace ProjectCSharp_SchoolGradingSystem
                 SurnameBox.Text = student.Surname;
                 EmailBox.Text = student.EMail;
             }
-            catch{}
+            catch { }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             EditUsers.EditStudent(NameBox, SurnameBox, EmailBox, PasswordBox, PasswordVerifyBox, infoblock, student.StudentId);
             ListboxStudents.Items.Clear();
-            
+
             studentlist = HandOverWork.pullStudents();
             var i = 0;
             foreach (var student in studentlist)

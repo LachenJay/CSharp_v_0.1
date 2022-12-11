@@ -6,35 +6,30 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid Margin="0,0,10,10">
-        <TextBox Name="Username" HorizontalAlignment="Center" Height="25" Margin="0,152,0,0" TextWrapping="Wrap"
-                 Text="" VerticalAlignment="Top" Width="200" Padding="3" />
-        <PasswordBox Name="Password" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="24"
-                     Padding="3" />
-        <TextBlock HorizontalAlignment="Left" Height="25" Margin="211,152,0,0" TextWrapping="Wrap" Width="60"
-                   TextAlignment="Center" Padding="3" VerticalAlignment="Top">
-            <Run Text="Usernam" /><Run Language="cs-cz" Text="e" /><Run Text="e" />
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="25" Margin="211,0,0,0" TextWrapping="Wrap" Width="63"
-                   TextAlignment="Center" VerticalAlignment="Center" Padding="3">
-            <Run Language="cs-cz" Text="Password" />
-        </TextBlock>
-        <Button Content="Login" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Width="200"
-                Height="26" Click="Button_Click" />
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/Login_teacher_admin.png"/>
+        </Grid.Background>
+
+
+        <TextBox x:Name="Username" HorizontalAlignment="Left" Height="25" Margin="279,128,0,0" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="216" Padding="3" BorderBrush="White" SelectionBrush="White" />
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Width="216" Height="24"
+                     Padding="3" Margin="277,176,0,0" BorderBrush="White" />
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="205,128,0,0" TextWrapping="Wrap" Width="60"
+                   TextAlignment="Center" Padding="3" VerticalAlignment="Top"><Run Text="Usernam" /><Run Language="cs-cz" Text="e" /><Run Text="e" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="205,176,0,0" TextWrapping="Wrap" Width="63"
+                   TextAlignment="Center" VerticalAlignment="Top" Padding="3"><Run Language="cs-cz" Text="Password" /></TextBlock>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="313,222,0,0" VerticalAlignment="Top" Width="142"
+                Height="42" Click="Button_Click" Opacity="0.02" BorderBrush="White" Foreground="White" />
         <TextBlock x:Name="result_username" HorizontalAlignment="Center" Height="25" Margin="0,68,0,0"
                    TextWrapping="Wrap" Width="294" TextAlignment="Left" Padding="3" VerticalAlignment="Top"
-                   Text="Uživatelské jméno nebo heslo nebylo zadáno správně!" Cursor="" Foreground="Red"
+                   Text="Uživatelské jméno nebo heslo nebylo zadáno správně!" Cursor="" Foreground="#FF9A0000"
                    RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform Angle="-0.085" />
-                    <TranslateTransform />
-                </TransformGroup>
-            </TextBlock.RenderTransform>
+
         </TextBlock>
-        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_1" />
+        <Button Content="Z"
+                 Click="Button_Click_1" BorderBrush="White" Foreground="Black" Background="White" Visibility="Visible" Margin="35,30,710,342" Opacity="0.02" />
 
 
     </Grid>

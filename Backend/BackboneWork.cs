@@ -1,11 +1,8 @@
-﻿using System;
+﻿using ProjectCSharp_SchoolGradingSystem.Models.DB;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
+
 
 namespace ProjectCSharp_SchoolGradingSystem.Backend;
 
@@ -32,7 +29,7 @@ internal class BackboneWork
     public void ChangeOnListBoxGrades(ListBox gradelistbox, ListBox studentlistbox, ListBox subjectlistbox)
     {
         gradelistbox.Items.Clear();
-        if (studentlistbox.SelectedItem != null && subjectlistbox.SelectedItem!=null)
+        if (studentlistbox.SelectedItem != null && subjectlistbox.SelectedItem != null)
         {
             studentlist = HandOverWork.pullStudents();
             subjectlist = HandOverWork.pullSubjects();
@@ -54,6 +51,23 @@ internal class BackboneWork
         }
     }
 
+    public void ChangeOnListBoxSubject(ListBox subjeBox)
+    {
+        subjeBox.Items.Clear();
+
+
+        subjectlist = HandOverWork.pullSubjects();
+        var j = 0;
+        foreach (var subject in subjectlist)
+        {
+
+            subjeBox.Items.Add(subjectlist[j].Name + " " + subjectlist[j].TeacherTeacherId);
+            j++;
+
+        }
+
+    }
+
 
 
     public static void ChangeScene(string scene, string title)
@@ -72,6 +86,7 @@ internal class BackboneWork
             case "Adminlg":
                 Application.Current.MainWindow.DataContext = new MainWindowView(5);
                 Application.Current.MainWindow.Title = title;
+
                 break;
 
             case "StudentLogin":

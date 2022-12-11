@@ -8,14 +8,17 @@
       d:DesignHeight="450" d:DesignWidth="800"
       >
 
-    <Grid Margin="35,0,-35,0">
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="133,86,0,0" TextWrapping="Wrap" Text="Název předmětu" VerticalAlignment="Top" Width="126"/>
-        <TextBox Name="SubjectNameBox" HorizontalAlignment="Left" Height="28" Margin="282,86,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="133,144,0,0" TextWrapping="Wrap" Text="Výběr učitele" VerticalAlignment="Top" Width="153"/>
-        <ListBox Name="TeacherBox" HorizontalAlignment="Left" Height="81" Margin="282,140,0,0" VerticalAlignment="Top" Width="195" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button Content="Uložit nový předmět" HorizontalAlignment="Left" Height="53" Margin="217,297,0,0" VerticalAlignment="Top" Width="223" Click="Button_Click"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/AddSubject.png"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="301,70,0,0" TextWrapping="Wrap" Text="Název předmětu" VerticalAlignment="Top" Width="126"/>
+        <TextBox Name="SubjectNameBox" HorizontalAlignment="Left" Height="24" Margin="301,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181" Foreground="Black" SelectionBrush="White" BorderBrush="White"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="298,130,0,0" TextWrapping="Wrap" Text="Výběr učitele" VerticalAlignment="Top" Width="153"/>
+        <ListBox Name="TeacherBox" HorizontalAlignment="Left" Height="104" Margin="298,153,0,0" VerticalAlignment="Top" Width="188" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="White"/>
+        <Button Content="Uložit nový předmět" HorizontalAlignment="Center" Height="41" Margin="0,329,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click" Opacity="0.02"/>
         <TextBlock Name="Warning" HorizontalAlignment="Left" Height="29" Margin="196,240,0,0" TextWrapping="Wrap" Text="Předmět musí mít název a vybraného učitele" VerticalAlignment="Top" Width="281" Foreground="Red" Visibility="Collapsed"/>
-        <Button Content="Zpět" HorizontalAlignment="Left" Height="79" Margin="10,10,0,0" VerticalAlignment="Top" Width="68" Click="Button_Click_1"/>
+        <Button Content="Zpět" HorizontalAlignment="Left" Height="39" Margin="32,32,0,0" VerticalAlignment="Top" Width="42" Click="Button_Click_1" Opacity="0.02"/>
 
     </Grid>
 </UserControl>

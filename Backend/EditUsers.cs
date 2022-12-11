@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ProjectCSharp_SchoolGradingSystem.Models.DB;
 using System.ComponentModel.DataAnnotations;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows;
-using System.Windows.Documents;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
-using System.Diagnostics;
 using System.Linq;
-using System.Xml.Linq;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace ProjectCSharp_SchoolGradingSystem.Backend;
 
 public class EditUsers
 {
-    public static void EditStudent(TextBox name_box, TextBox surname_box, TextBox email_box, PasswordBox password_box, PasswordBox password_box_verify,TextBlock info, string id)
+    public static void EditStudent(TextBox name_box, TextBox surname_box, TextBox email_box, PasswordBox password_box, PasswordBox password_box_verify, TextBlock info, string id)
     {
         string name = null;
         string surname = null;
@@ -26,22 +20,22 @@ public class EditUsers
         {
             name = name_box.Text;
         }
-        
+
 
         if (surname_box.Text != "")
         {
             surname = surname_box.Text;
         }
-        
+
 
         var emailcheck = new EmailAddressAttribute();
         var isvalid = emailcheck.IsValid(email_box.Text);
         if (email_box.Text != "" && isvalid)
         {
-            
+
             e_mail = email_box.Text;
         }
-        
+
 
         if (password_box.Password != "")
         {
@@ -55,14 +49,14 @@ public class EditUsers
                 password_box.Password = "";
                 password_box_verify.Password = "";
             }
-            
+
         }
-        
+
 
         if (name != "" || surname != "" || e_mail != "" || password != "" ||
             password_box.Password != password_box_verify.Password)
         {
-            
+
 
             using (var db = new SchoolSystem1Context())
             {
@@ -75,12 +69,12 @@ public class EditUsers
                 db.SaveChanges(true);
                 MessageBox.Show("Student upraven!");
             }
-           
 
-            
-                
-            
-            
+
+
+
+
+
         }
         else
         {
@@ -207,7 +201,7 @@ public class EditUsers
 
 
         if ((name != "") && (surname != "") && (e_mail != "") && (password != "") &&
-            (password_box.Password == password_box_verify.Password) && (password_box.Password !=null))
+            (password_box.Password == password_box_verify.Password) && (password_box.Password != null))
         {
 
 
@@ -222,11 +216,11 @@ public class EditUsers
                 db.SaveChanges(true);
 
                 MessageBox.Show("Učitel upraven!");
-                
+
 
             }
 
-            
+
 
 
 
@@ -235,7 +229,7 @@ public class EditUsers
         else
         {
             info.Visibility = Visibility.Visible;
-            
+
         }
     }
 }

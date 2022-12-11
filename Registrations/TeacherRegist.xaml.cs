@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Backend;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -18,24 +17,16 @@ public partial class TeacherRegist : UserControl
     private void Button_Click_1(object sender, RoutedEventArgs e)
     {
         name_info.Visibility = Visibility.Collapsed;
-        surname_info.Visibility = Visibility.Collapsed;
-        password_info.Visibility = Visibility.Collapsed;
-        password_verify_info.Visibility = Visibility.Collapsed;
 
 
-        var info = new List<TextBlock>();
-        info.Add(name_info);
-        info.Add(surname_info);
-        info.Add(mail_info);
-        info.Add(password_info);
-        info.Add(password_verify_info);
+        var info = name_info;
+
+
         RegistrationWork.TeacherRegistration(name_box, surname_box, password_box, password_box_verify, email_box, info);
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        var x = new MainWindowView(7);
-        Application.Current.MainWindow.DataContext = x;
-        Application.Current.MainWindow.Title = "Admin Dashboard";
+        BackboneWork.ChangeScene("AdminDash", Application.Current.MainWindow.Title);
     }
 }

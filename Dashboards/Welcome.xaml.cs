@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
+using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Backend;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -28,5 +28,10 @@ public partial class Welcome : UserControl
     private void Button_Click_2(object sender, RoutedEventArgs e)
     {
         BackboneWork.ChangeScene("Adminlg", "Přihlášení admin");
+    }
+
+    private void Button_Click_zpet(object sender, RoutedEventArgs e)
+    {
+        Application.Current.MainWindow.Close();
     }
 }

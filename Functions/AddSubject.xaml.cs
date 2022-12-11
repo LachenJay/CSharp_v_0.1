@@ -1,19 +1,8 @@
 ﻿using ProjectCSharp_SchoolGradingSystem.Backend;
-using System;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -40,10 +29,10 @@ namespace ProjectCSharp_SchoolGradingSystem
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Warning.Visibility = Visibility.Collapsed;
-            if (SubjectNameBox.Text != "" && SubjectNameBox.Text != null && TeacherBox.SelectedIndex >=0)
+            if (SubjectNameBox.Text != "" && SubjectNameBox.Text != null && TeacherBox.SelectedIndex >= 0)
             {
                 string teacherid = teacherlist[TeacherBox.SelectedIndex].TeacherId;
-                SubjectWork.AddSubjectExt(SubjectNameBox.Text,teacherid);
+                SubjectWork.AddSubjectExt(SubjectNameBox.Text, teacherid);
             }
             else
             {
@@ -54,7 +43,7 @@ namespace ProjectCSharp_SchoolGradingSystem
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var nav = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title);
-            if (nav.Count !=0)
+            if (nav.Count != 0)
             {
                 BackboneWork.ChangeScene("TeacherDash", Application.Current.MainWindow.Title);
             }

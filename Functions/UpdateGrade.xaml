@@ -7,35 +7,38 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <ListBox Name="studentlistbox" HorizontalAlignment="Left" Height="146" Margin="466,47,0,0"
-                 VerticalAlignment="Top" Width="133" d:ItemsSource="{d:SampleData ItemCount=5}"
-                 SelectionChanged="Studentlistbox_SelectionChanged" />
-        <ListBox Name="subjectlistbox" HorizontalAlignment="Left" Height="146" Margin="632,47,0,0"
-                 VerticalAlignment="Top" Width="133" d:ItemsSource="{d:SampleData ItemCount=5}"
-                 SelectionChanged="Subjectlistbox_SelectionChanged" />
-        <ListBox Name="gradelistbox" HorizontalAlignment="Left" Height="146" Margin="400,218,0,0"
-                 VerticalAlignment="Top" Width="376" d:ItemsSource="{d:SampleData ItemCount=5}" />
-        <CheckBox Name="removecheckbox" Content="Odstranit" HorizontalAlignment="Left" Height="22" Margin="54,172,0,0"
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/EditGrade.png"/>
+        </Grid.Background>
+        <ListBox Name="studentlistbox" HorizontalAlignment="Left" Height="107" Margin="104,94,0,0"
+                 VerticalAlignment="Top" Width="177" d:ItemsSource="{d:SampleData ItemCount=5}"
+                 SelectionChanged="Studentlistbox_SelectionChanged" BorderBrush="White" />
+        <ListBox Name="subjectlistbox" HorizontalAlignment="Left" Height="71" Margin="104,239,0,0"
+                 VerticalAlignment="Top" Width="177" d:ItemsSource="{d:SampleData ItemCount=5}"
+                 SelectionChanged="Subjectlistbox_SelectionChanged" BorderBrush="White" />
+        <ListBox Name="gradelistbox" HorizontalAlignment="Left" Height="80" Margin="371,92,0,0"
+                 VerticalAlignment="Top" Width="130" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="White" />
+        <CheckBox Name="removecheckbox" Content="Odstranit" HorizontalAlignment="Left" Height="22" Margin="546,151,0,0"
                   VerticalAlignment="Top" Width="86" Checked="removecheckbox_Checked"
                   Unchecked="removecheckbox_Unchecked" />
-        <RadioButton Name="one" GroupName="gradingradio" Content="1" HorizontalAlignment="Left" Margin="61,221,0,0"
+        <RadioButton Name="one" GroupName="gradingradio" Content="1" HorizontalAlignment="Left" Margin="398,290,0,0"
                      VerticalAlignment="Top" IsChecked="True" />
-        <RadioButton Name="two" GroupName="gradingradio" Content="2" HorizontalAlignment="Left" Margin="109,221,0,0"
+        <RadioButton Name="two" GroupName="gradingradio" Content="2" HorizontalAlignment="Left" Margin="446,290,0,0"
                      VerticalAlignment="Top" />
-        <RadioButton Name="three" GroupName="gradingradio" Content="3" HorizontalAlignment="Left" Margin="160,221,0,0"
+        <RadioButton Name="three" GroupName="gradingradio" Content="3" HorizontalAlignment="Left" Margin="497,290,0,0"
                      VerticalAlignment="Top" />
-        <RadioButton Name="four" GroupName="gradingradio" Content="4" HorizontalAlignment="Left" Margin="210,221,0,0"
+        <RadioButton Name="four" GroupName="gradingradio" Content="4" HorizontalAlignment="Left" Margin="547,290,0,0"
                      VerticalAlignment="Top" />
-        <RadioButton Name="five" GroupName="gradingradio" Content="5" HorizontalAlignment="Left" Margin="263,221,0,0"
+        <RadioButton Name="five" GroupName="gradingradio" Content="5" HorizontalAlignment="Left" Margin="600,290,0,0"
                      VerticalAlignment="Top" />
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="54,194,0,0" TextWrapping="Wrap" Text="Vyberte známku"
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="365,265,0,0" TextWrapping="Wrap" Text="Vyberte známku"
                    VerticalAlignment="Top" Width="124" />
-        <Button Content="Uložit" HorizontalAlignment="Left" Height="53" Margin="263,370,0,0" VerticalAlignment="Top"
-                Width="217" Click="Button_Click" />
-        <TextBox Name="descr" HorizontalAlignment="Left" Height="101" Margin="54,263,0,0" TextWrapping="Wrap" Text=""
-                 VerticalAlignment="Top" Width="262" />
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="54,241,0,0" TextWrapping="Wrap"
+        <Button Content="Uložit" HorizontalAlignment="Left" Height="40" Margin="294,329,0,0" VerticalAlignment="Top"
+                Width="140" Click="Button_Click" Opacity="0.02" />
+        <TextBox Name="descr" HorizontalAlignment="Left" Height="54" Margin="369,202,0,0" TextWrapping="Wrap" Text=""
+                 VerticalAlignment="Top" Width="277" SelectionBrush="White" BorderBrush="White" />
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="368,181,0,0" TextWrapping="Wrap"
                    Text="Nový popis ke známce" VerticalAlignment="Top" Width="124" />
-        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2" />
+        <Button Content="Zpět" Margin="33,30,712,344" Click="Button_Click_2" Opacity="0.02" />
     </Grid>
 </UserControl>

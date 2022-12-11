@@ -1,19 +1,8 @@
 ﻿using ProjectCSharp_SchoolGradingSystem.Backend;
 using ProjectCSharp_SchoolGradingSystem.Models.DB;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProjectCSharp_SchoolGradingSystem
 {
@@ -29,7 +18,15 @@ namespace ProjectCSharp_SchoolGradingSystem
         {
             InitializeComponent();
             teacherlist = HandOverWork.pullTeachers();
-            teacher = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title)[0];
+            try
+            {
+                teacher = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title)[0];
+            }
+            catch
+            {
+                teacher = null;
+            }
+
             var i = 0;
             foreach (var student in teacherlist)
             {
@@ -38,7 +35,7 @@ namespace ProjectCSharp_SchoolGradingSystem
                 i++;
             }
 
-            
+
             var temp = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title);
 
             if (temp.Count != 0)
@@ -63,20 +60,20 @@ namespace ProjectCSharp_SchoolGradingSystem
                 SurnameBox.Text = teacher.Surname;
                 EmailBox.Text = teacher.EMail;
             }
-            catch{}
+            catch { }
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             var temp = HandOverWork.pullTeacherByMail(mail);
-            
+
             if (temp.Count != 0)
             {
                 mail = EmailBox.Text;
                 temp = HandOverWork.pullTeacherByMail(mail);
-                
+
             }
             else
             {
@@ -84,13 +81,13 @@ namespace ProjectCSharp_SchoolGradingSystem
             }
             EditUsers.EditTeacher(NameBox, SurnameBox, EmailBox, PasswordBox, PasswordVerifyBox, infoblock, teacher.TeacherId);
 
-            
+
             if (temp.Count != 0)
             {
-                    mail = EmailBox.Text;
-                    
-                        Application.Current.MainWindow.Title = mail;
-                    
+                mail = EmailBox.Text;
+
+                Application.Current.MainWindow.Title = mail;
+
             }
 
             ListBoxTeachers.Items.Clear();
@@ -103,7 +100,7 @@ namespace ProjectCSharp_SchoolGradingSystem
                     teacherlist[i].Name + " " + teacherlist[i].Surname + " " + teacherlist[i].TeacherId);
                 i++;
             }
-            
+
 
             PasswordBox.Password = "";
             PasswordVerifyBox.Password = "";
@@ -115,7 +112,7 @@ namespace ProjectCSharp_SchoolGradingSystem
             var nav = HandOverWork.pullTeacherByMail(Application.Current.MainWindow.Title);
             if (nav.Count != 0)
             {
-                BackboneWork.ChangeScene("TeacherLogin", Application.Current.MainWindow.Title);
+                BackboneWork.ChangeScene("TeacherLogin", "Přihlášení učitele");
             }
             else
             {

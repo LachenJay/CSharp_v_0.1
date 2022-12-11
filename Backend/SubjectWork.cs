@@ -1,8 +1,8 @@
 ﻿using ProjectCSharp_SchoolGradingSystem.Models.DB;
-using System.Windows;
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace ProjectCSharp_SchoolGradingSystem.Backend;
@@ -19,14 +19,16 @@ public class SubjectWork
             var addingsubj = new Subject();
             addingsubj.Name = name;
             addingsubj.TeacherTeacherId = teacherid;
-            
-            addingsubj.SubjectId = "subj" + (count + 1);
-            
+
+            Random x = new Random();
+            int n = x.Next(9999);
+            addingsubj.SubjectId = "subj" + (n);
+
             db.Subjects.Add(addingsubj);
             db.SaveChanges(true);
             MessageBox.Show("Předmět uložen!");
         }
-        
+
     }
     public static void DeleteSubjectExt(Subject subject)
     {
@@ -34,7 +36,7 @@ public class SubjectWork
         {
             db.Subjects.Remove(subject);
             db.SaveChanges(true);
-            MessageBox.Show("Známka smazána!");
+            MessageBox.Show("Předmět smazán!");
         }
     }
     public static void UpdateSubjectExt(string name, string teacherid, string subjectid)

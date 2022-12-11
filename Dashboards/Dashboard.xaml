@@ -6,12 +6,14 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Button Content="Zpět" HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top"
-                Width="80" Click="Button_Click" />
-        <ListBox Name="listofsubjects" HorizontalAlignment="Left" Height="202" Margin="50,98,0,0"
-                 VerticalAlignment="Top" Width="155" d:ItemsSource="{d:SampleData ItemCount=5}"
-                 SelectionChanged="ListBox_SelectionChanged" />
-        <ListBox Name="listofgrades" HorizontalAlignment="Left" Height="202" Margin="238,98,0,0"
-                 VerticalAlignment="Top" Width="522" d:ItemsSource="{d:SampleData ItemCount=5}" />
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/StudentDash.png"/>
+        </Grid.Background>
+        <Button Content="Zpět" Margin="33,30,712,344" Click="Button_Click" Opacity="0.02" />
+        <ListBox Name="listofsubjects" HorizontalAlignment="Left" Height="274" Margin="109,85,0,0"
+                 VerticalAlignment="Top" Width="138" d:ItemsSource="{d:SampleData ItemCount=5}"
+                 SelectionChanged="ListBox_SelectionChanged" BorderBrush="White" />
+        <ListBox Name="listofgrades" HorizontalAlignment="Left" Height="274" Margin="279,85,0,0"
+                 VerticalAlignment="Top" Width="421" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="White" />
     </Grid>
 </UserControl>

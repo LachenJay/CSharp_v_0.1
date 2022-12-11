@@ -8,6 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Backgrounds\AddGrade.png" />
+    <None Remove="Backgrounds\AddSubject.png" />
+    <None Remove="Backgrounds\AdminDash.png" />
+    <None Remove="Backgrounds\EditGrade.png" />
+    <None Remove="Backgrounds\EditSubject.png" />
+    <None Remove="Backgrounds\Edit_student_teacher.png" />
+    <None Remove="Backgrounds\Login_student.png" />
+    <None Remove="Backgrounds\Login_teacher_admin.png" />
+    <None Remove="Backgrounds\Register_student_teacher.png" />
+    <None Remove="Backgrounds\StudentDash.png" />
+    <None Remove="Backgrounds\TeacherDash.png" />
+    <None Remove="Backgrounds\Welcome.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
@@ -16,6 +31,21 @@
     </PackageReference>
     <PackageReference Include="runtime.native.System.Data.SqlClient.sni" Version="4.7.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Backgrounds\AddGrade.png" />
+    <Resource Include="Backgrounds\AddSubject.png" />
+    <Resource Include="Backgrounds\AdminDash.png" />
+    <Resource Include="Backgrounds\EditGrade.png" />
+    <Resource Include="Backgrounds\EditSubject.png" />
+    <Resource Include="Backgrounds\Edit_student_teacher.png" />
+    <Resource Include="Backgrounds\Login_student.png" />
+    <Resource Include="Backgrounds\Login_teacher_admin.png" />
+    <Resource Include="Backgrounds\Register_student_teacher.png" />
+    <Resource Include="Backgrounds\StudentDash.png" />
+    <Resource Include="Backgrounds\TeacherDash.png" />
+    <Resource Include="Backgrounds\Welcome.png" />
   </ItemGroup>
 
 </Project>

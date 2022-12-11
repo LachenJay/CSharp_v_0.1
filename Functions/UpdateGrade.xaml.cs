@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Backend;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -36,7 +36,7 @@ public partial class UpdateGrade : UserControl
         var j = 0;
         foreach (var subject in subjectlist)
         {
-            
+
             if (subjectlist[j].TeacherTeacherId == tech[0].TeacherId)
                 subjectlistbox.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
 
@@ -64,10 +64,11 @@ public partial class UpdateGrade : UserControl
         rad.Add(five);
         if (gradelistbox.SelectedItem != null)
         {
-            GradeWork.EditGrade(studentlistbox, gradelistbox, subjectlistbox,removecheckbox, descr, rad);
+            GradeWork.EditGrade(studentlistbox, gradelistbox, subjectlistbox, removecheckbox, descr, rad);
+            push.ChangeOnListBoxGrades(gradelistbox, studentlistbox, subjectlistbox);
         }
 
-        
+
     }
 
     private void removecheckbox_Checked(object sender, RoutedEventArgs e)

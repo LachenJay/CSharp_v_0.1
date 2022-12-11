@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
+﻿using ProjectCSharp_SchoolGradingSystem.Models.DB;
+using System.Linq;
 
 namespace ProjectCSharp_SchoolGradingSystem.Backend;
 

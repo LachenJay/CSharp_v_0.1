@@ -6,33 +6,36 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid Margin="4,-2,-4,2">
-        <ListBox Name="listofstudents" HorizontalAlignment="Left" Height="128" Margin="628,35,0,0"
-                 VerticalAlignment="Top" Width="125" d:ItemsSource="{d:SampleData ItemCount=5}" />
-        <TextBlock HorizontalAlignment="Left" Height="35" Margin="475,35,0,0" TextWrapping="Wrap"
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Backgrounds/AddGrade.png"/>
+        </Grid.Background>
+        <ListBox Name="listofstudents" HorizontalAlignment="Left" Height="95" Margin="101,93,0,0"
+                 VerticalAlignment="Top" Width="183" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="White" />
+        <TextBlock HorizontalAlignment="Left" Height="35" Margin="106,71,0,0" TextWrapping="Wrap"
                    Text="Vyberte studenta" VerticalAlignment="Top" Width="153" />
-        <RadioButton Name="one" GroupName="gradingradio" Content="1" HorizontalAlignment="Left" Margin="338,137,0,0"
+        <RadioButton Name="one" GroupName="gradingradio" Content="1" HorizontalAlignment="Left" Margin="396,231,0,0"
                      VerticalAlignment="Top" IsChecked="True" />
-        <RadioButton Name="two" GroupName="gradingradio" Content="2" HorizontalAlignment="Center" Margin="0,137,0,0"
+        <RadioButton Name="two" GroupName="gradingradio" Content="2" HorizontalAlignment="Left" Margin="445,231,0,0"
                      VerticalAlignment="Top" />
-        <RadioButton Name="three" GroupName="gradingradio" Content="3" HorizontalAlignment="Left" Margin="438,137,0,0"
+        <RadioButton Name="three" GroupName="gradingradio" Content="3" HorizontalAlignment="Left" Margin="496,231,0,0"
                      VerticalAlignment="Top" />
-        <RadioButton Name="four" GroupName="gradingradio" Content="4" HorizontalAlignment="Left" Margin="488,137,0,0"
+        <RadioButton Name="four" GroupName="gradingradio" Content="4" HorizontalAlignment="Left" Margin="546,231,0,0"
                      VerticalAlignment="Top" />
-        <RadioButton Name="five" GroupName="gradingradio" Content="5" HorizontalAlignment="Left" Margin="541,137,0,0"
+        <RadioButton Name="five" GroupName="gradingradio" Content="5" HorizontalAlignment="Left" Margin="599,231,0,0"
                      VerticalAlignment="Top" />
-        <TextBlock HorizontalAlignment="Left" Height="26" Margin="338,93,0,0" TextWrapping="Wrap" Text="Známka"
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="367,200,0,0" TextWrapping="Wrap" Text="Známka"
                    VerticalAlignment="Top" Width="163" />
-        <TextBlock HorizontalAlignment="Left" Height="35" Margin="470,186,0,0" TextWrapping="Wrap"
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="106,206,0,0" TextWrapping="Wrap"
                    Text="Vyberte předmět" VerticalAlignment="Top" Width="153" />
-        <ListBox Name="listofsubjects" HorizontalAlignment="Left" Height="128" Margin="628,186,0,0"
-                 VerticalAlignment="Top" Width="125" d:ItemsSource="{d:SampleData ItemCount=5}" />
-        <Button Content="Odeslat" HorizontalAlignment="Center" Height="45" Margin="0,342,0,0" VerticalAlignment="Top"
-                Width="216" Click="Button_Click" />
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="338,169,0,0" TextWrapping="Wrap"
+        <ListBox Name="listofsubjects" HorizontalAlignment="Left" Height="83" Margin="103,226,0,0"
+                 VerticalAlignment="Top" Width="183" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="White" />
+        <Button Content="Odeslat" HorizontalAlignment="Center" Height="38" Margin="0,330,0,0" VerticalAlignment="Top"
+                Width="140" Click="Button_Click" Opacity="0.02" />
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="373,71,0,0" TextWrapping="Wrap"
                    Text="Poznámka k hodnocení" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" />
-        <TextBox Name="descr" HorizontalAlignment="Left" Height="110" Margin="338,204,0,0" TextWrapping="Wrap"
-                 Text="TextBox" VerticalAlignment="Top" Width="270" />
-        <Button Content="Zpět" Margin="10,10,703,344" Click="Button_Click_2" />
+        <TextBox Name="descr" HorizontalAlignment="Left" Height="64" Margin="371,92,0,0" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="274" BorderBrush="White" />
+        <Button Content="Zpět" Margin="36,32,714,345" Click="Button_Click_2" Opacity="0.02" />
     </Grid>
 </UserControl>

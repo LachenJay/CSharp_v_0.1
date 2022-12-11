@@ -1,8 +1,6 @@
-﻿using System.Windows;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
+using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Backend;
-using ProjectCSharp_SchoolGradingSystem.Backend;
-using ProjectCSharp_SchoolGradingSystem;
 
 
 

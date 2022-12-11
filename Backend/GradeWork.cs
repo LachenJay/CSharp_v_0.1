@@ -1,10 +1,9 @@
 ﻿using ProjectCSharp_SchoolGradingSystem.Models.DB;
-using System.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 
 namespace ProjectCSharp_SchoolGradingSystem.Backend;
 
@@ -22,13 +21,14 @@ public class GradeWork
         using (var db = new SchoolSystem1Context())
         {
             var count = db.Grades.Count();
-
+            Random x = new Random();
+            int n = x.Next(0, 99999999);
 
             var addinggrade = new Grade();
             addinggrade.StudentStudentId = student;
             addinggrade.SubjectId = subject;
             addinggrade.TeacherTeacherId = teacher;
-            addinggrade.GradeId = "grd" + teacher + (count + 1);
+            addinggrade.GradeId = "grd" + teacher + (n);
             addinggrade.Grade1 = Convert.ToString(grade);
             addinggrade.Grade_description = "Popis známky: " + descr;
             db.Grades.Add(addinggrade);
@@ -57,7 +57,7 @@ public class GradeWork
             MessageBox.Show("Známka upravena!");
         }
     }
-    public static void EditGrade(ListBox studentlistbox, ListBox gradelistbox, ListBox subjectListBox,CheckBox removecheckbox, TextBox descr,
+    public static void EditGrade(ListBox studentlistbox, ListBox gradelistbox, ListBox subjectListBox, CheckBox removecheckbox, TextBox descr,
         List<RadioButton> rad)
     {
         var s = studentlistbox.SelectedIndex;
@@ -90,7 +90,7 @@ public class GradeWork
                 int j = 0;
                 foreach (var radi in rad)
                 {
-                    if (rad[j].IsChecked == true){ name = rad[j].Name;}
+                    if (rad[j].IsChecked == true) { name = rad[j].Name; }
                     j++;
                 }
 
@@ -114,7 +114,7 @@ public class GradeWork
                 }
 
                 UpdateGradeExt(grdd[gradelistbox.SelectedIndex].GradeId, grade, grade_description);
-                
+
             }
             else
             {
@@ -140,7 +140,7 @@ public class GradeWork
             return listofgr;
         }
     }
-    public static List<Grade> pullGradesBySubjectID(string subjectId )
+    public static List<Grade> pullGradesBySubjectID(string subjectId)
     {
         var listofgr = new List<Grade>();
         using (var db = new SchoolSystem1Context())

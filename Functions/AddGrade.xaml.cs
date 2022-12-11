@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using ProjectCSharp_SchoolGradingSystem.Backend;
+using ProjectCSharp_SchoolGradingSystem.Models.DB;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using ProjectCSharp_SchoolGradingSystem.Backend;
-using ProjectCSharp_SchoolGradingSystem.Models.DB;
 
 namespace ProjectCSharp_SchoolGradingSystem;
 
@@ -16,7 +15,7 @@ public partial class AddGrade : UserControl
     private readonly List<Student> studentlist = new();
     private readonly List<Subject> subjectlist = new();
     private readonly List<Teacher> teacherlist = HandOverWork.pullTeachers();
-    
+
     private HandOverWork req = new();
 
     public AddGrade()
@@ -39,7 +38,7 @@ public partial class AddGrade : UserControl
             var j = 0;
             foreach (var subject in subjectlist)
             {
-               
+
                 if (subjectlist[j].TeacherTeacherId == tech.TeacherId)
                     listofsubjects.Items.Add(subjectlist[j].Name + " " + subjectlist[j].SubjectId);
 
