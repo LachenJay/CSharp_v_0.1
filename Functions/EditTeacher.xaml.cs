@@ -82,7 +82,7 @@ namespace ProjectCSharp_SchoolGradingSystem
             EditUsers.EditTeacher(NameBox, SurnameBox, EmailBox, PasswordBox, PasswordVerifyBox, infoblock, teacher.TeacherId);
 
 
-            if (temp.Count != 0)
+            if (temp != null)
             {
                 mail = EmailBox.Text;
 

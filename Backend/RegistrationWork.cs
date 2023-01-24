@@ -9,10 +9,10 @@ public class RegistrationWork
     public static void StudentRegistration(TextBox name_box, TextBox surname_box, PasswordBox password_box,
         PasswordBox password_box_verify, TextBox email_box, TextBlock info)
     {
-        string name = null;
-        string surname = null;
-        string password = null;
-        string e_mail = null;
+        string name = "";
+        string surname = "";
+        string password = "";
+        string e_mail = "";
         var temp = "";
         if (name_box.Text != "")
         {
@@ -88,10 +88,10 @@ public class RegistrationWork
     public static void TeacherRegistration(TextBox name_box, TextBox surname_box, PasswordBox password_box,
         PasswordBox password_box_verify, TextBox email_box, TextBlock info)
     {
-        string name = null;
-        string surname = null;
-        string password = null;
-        string e_mail = null;
+        string name = "";
+        string surname = "";
+        string password = "";
+        string e_mail = "";
         var temp = "";
         if (name_box.Text != "")
         {
@@ -118,7 +118,7 @@ public class RegistrationWork
         if (email_box.Text != "" && isvalid)
         {
             info.Visibility = Visibility.Hidden;
-            e_mail = name_box.Text;
+            e_mail = email_box.Text;
         }
         else
         {

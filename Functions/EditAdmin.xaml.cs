@@ -17,7 +17,7 @@ namespace ProjectCSharp_SchoolGradingSystem
         {
             InitializeComponent();
             adminlist = HandOverWork.pullAdmins();
-            var i = 0;
+            
 
 
             adminlist = HandOverWork.pullAdminByEmail(Application.Current.MainWindow.Title);

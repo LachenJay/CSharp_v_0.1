@@ -10,11 +10,11 @@ public class EditUsers
 {
     public static void EditStudent(TextBox name_box, TextBox surname_box, TextBox email_box, PasswordBox password_box, PasswordBox password_box_verify, TextBlock info, string id)
     {
-        string name = null;
-        string surname = null;
-        string password = null;
-        string e_mail = null;
-        var temp = "";
+        string name = "";
+        string surname = "";
+        string password = "";
+        string e_mail = "";
+        
         info.Visibility = Visibility.Collapsed;
         if (name_box.Text != "")
         {
@@ -83,11 +83,11 @@ public class EditUsers
     }
     public static void EditAdmin(TextBox name_box, TextBox surname_box, TextBox email_box, PasswordBox password_box, PasswordBox password_box_verify, TextBlock info, string id)
     {
-        string name = null;
-        string surname = null;
-        string password = null;
-        string e_mail = null;
-        var temp = "";
+        string name = "";
+        string surname = "";
+        string password = "";
+        string e_mail = "";
+        
         info.Visibility = Visibility.Collapsed;
         if (name_box.Text != "")
         {
@@ -157,11 +157,11 @@ public class EditUsers
 
     public static void EditTeacher(TextBox name_box, TextBox surname_box, TextBox email_box, PasswordBox password_box, PasswordBox password_box_verify, TextBlock info, string id)
     {
-        string name = null;
-        string surname = null;
-        string password = null;
-        string e_mail = null;
-        var temp = "";
+        string name = "";
+        string surname = "";
+        string password = "";
+        string e_mail = "";
+        
         info.Visibility = Visibility.Collapsed;
         if (name_box.Text != "")
         {

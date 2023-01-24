@@ -30,7 +30,7 @@ public partial class SchoolSystem1Context : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(
-            "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=E:\\GIT\\CSHARP_V_0.1\\SCHOOLSYSTEM1\\SCHOOLSYSTEM1.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Dokumenty\\CSharp_v_0.1-master\\SchoolSystem1\\SchoolSystem1.mdf;Integrated Security=True;Connect Timeout=30");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
